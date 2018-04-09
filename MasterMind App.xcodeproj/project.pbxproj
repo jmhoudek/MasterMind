@@ -123,10 +123,10 @@
 		23631CD01FDEFAA100FE27BA /* MasterMind App */ = {
 			isa = PBXGroup;
 			children = (
-				23BDA1AC207BCED2004EAE2F /* leaderboard.png */,
-				23BDA1AE207BCEDA004EAE2F /* home.png */,
-				23BDA1B0207BCEEA004EAE2F /* Rules.png */,
 				23BDA1B2207BCEED004EAE2F /* HallofFame.png */,
+				23BDA1AE207BCEDA004EAE2F /* home.png */,
+				23BDA1AC207BCED2004EAE2F /* leaderboard.png */,
+				23BDA1B0207BCEEA004EAE2F /* Rules.png */,
 				23BDA1B4207BCEF2004EAE2F /* settings.png */,
 				23631CD11FDEFAA100FE27BA /* AppDelegate.swift */,
 				2385CE262028CD3F0011BD8F /* App.swift */,
