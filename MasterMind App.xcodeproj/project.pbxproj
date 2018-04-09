@@ -19,10 +19,14 @@
 		2385CE252028CD120011BD8F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2385CE242028CD120011BD8F /* Team.swift */; };
 		2385CE272028CD3F0011BD8F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2385CE262028CD3F0011BD8F /* App.swift */; };
 		23962768202A1E9500FAD2C0 /* standingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23962767202A1E9500FAD2C0 /* standingsViewController.swift */; };
+		23BDA1AD207BCED3004EAE2F /* leaderboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BDA1AC207BCED2004EAE2F /* leaderboard.png */; };
+		23BDA1AF207BCEDA004EAE2F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BDA1AE207BCEDA004EAE2F /* home.png */; };
+		23BDA1B1207BCEEA004EAE2F /* Rules.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BDA1B0207BCEEA004EAE2F /* Rules.png */; };
+		23BDA1B3207BCEEE004EAE2F /* HallofFame.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BDA1B2207BCEED004EAE2F /* HallofFame.png */; };
+		23BDA1B5207BCEF2004EAE2F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 23BDA1B4207BCEF2004EAE2F /* settings.png */; };
 		23D67DBD2058357A00D7F007 /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D67DBC2058357A00D7F007 /* gameViewController.swift */; };
 		68D15C571FEC29D20013FE91 /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C561FEC29D20013FE91 /* rulesViewController.swift */; };
 		68D15C5D1FEC2B080013FE91 /* hallOfFameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */; };
-		6C867D202065656500BF765A /* Toolbar Images in Resources */ = {isa = PBXBuildFile; fileRef = 6C867D1F2065656500BF765A /* Toolbar Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +65,14 @@
 		2385CE242028CD120011BD8F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		2385CE262028CD3F0011BD8F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		23962767202A1E9500FAD2C0 /* standingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = standingsViewController.swift; sourceTree = "<group>"; };
+		23BDA1AC207BCED2004EAE2F /* leaderboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leaderboard.png; path = ../../../Desktop/leaderboard.png; sourceTree = "<group>"; };
+		23BDA1AE207BCEDA004EAE2F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../Desktop/home.png; sourceTree = "<group>"; };
+		23BDA1B0207BCEEA004EAE2F /* Rules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rules.png; path = ../../../Desktop/Rules.png; sourceTree = "<group>"; };
+		23BDA1B2207BCEED004EAE2F /* HallofFame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HallofFame.png; path = ../../../Desktop/HallofFame.png; sourceTree = "<group>"; };
+		23BDA1B4207BCEF2004EAE2F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../Desktop/settings.png; sourceTree = "<group>"; };
 		23D67DBC2058357A00D7F007 /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
 		68D15C561FEC29D20013FE91 /* rulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
 		68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hallOfFameViewController.swift; sourceTree = "<group>"; };
-		6C867D1F2065656500BF765A /* Toolbar Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Toolbar Images"; path = "../../Desktop/Toolbar Images"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,6 @@
 				23631CE51FDEFAA100FE27BA /* MasterMind AppTests */,
 				23631CF01FDEFAA100FE27BA /* MasterMind AppUITests */,
 				23631CCF1FDEFAA100FE27BA /* Products */,
-				6C867D1F2065656500BF765A /* Toolbar Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +123,11 @@
 		23631CD01FDEFAA100FE27BA /* MasterMind App */ = {
 			isa = PBXGroup;
 			children = (
+				23BDA1AC207BCED2004EAE2F /* leaderboard.png */,
+				23BDA1AE207BCEDA004EAE2F /* home.png */,
+				23BDA1B0207BCEEA004EAE2F /* Rules.png */,
+				23BDA1B2207BCEED004EAE2F /* HallofFame.png */,
+				23BDA1B4207BCEF2004EAE2F /* settings.png */,
 				23631CD11FDEFAA100FE27BA /* AppDelegate.swift */,
 				2385CE262028CD3F0011BD8F /* App.swift */,
 				23198554202B6E1F00B32B2F /* Game.swift */,
@@ -262,10 +274,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BDA1B5207BCEF2004EAE2F /* settings.png in Resources */,
 				23631CDC1FDEFAA100FE27BA /* LaunchScreen.storyboard in Resources */,
+				23BDA1B3207BCEEE004EAE2F /* HallofFame.png in Resources */,
+				23BDA1B1207BCEEA004EAE2F /* Rules.png in Resources */,
+				23BDA1AF207BCEDA004EAE2F /* home.png in Resources */,
 				23631CD91FDEFAA100FE27BA /* Assets.xcassets in Resources */,
 				23631CD71FDEFAA100FE27BA /* Main.storyboard in Resources */,
-				6C867D202065656500BF765A /* Toolbar Images in Resources */,
+				23BDA1AD207BCED3004EAE2F /* leaderboard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

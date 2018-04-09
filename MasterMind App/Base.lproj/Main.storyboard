@@ -1526,11 +1526,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HallofFame.png" width="25" height="25"/>
+        <image name="HallofFame.png" width="50" height="50"/>
         <image name="Image2" width="639" height="337"/>
-        <image name="Rules.png" width="25" height="25"/>
-        <image name="home.png" width="25" height="25"/>
-        <image name="leaderboard.png" width="25" height="25"/>
-        <image name="settings.png" width="25" height="25"/>
+        <image name="Rules.png" width="50" height="50"/>
+        <image name="home.png" width="50" height="50"/>
+        <image name="leaderboard.png" width="50" height="50"/>
+        <image name="settings.png" width="50" height="50"/>
     </resources>
 </document>
