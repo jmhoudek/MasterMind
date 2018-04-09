@@ -22,7 +22,11 @@
 		23D67DBD2058357A00D7F007 /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D67DBC2058357A00D7F007 /* gameViewController.swift */; };
 		68D15C571FEC29D20013FE91 /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C561FEC29D20013FE91 /* rulesViewController.swift */; };
 		68D15C5D1FEC2B080013FE91 /* hallOfFameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */; };
-		6C867D202065656500BF765A /* Toolbar Images in Resources */ = {isa = PBXBuildFile; fileRef = 6C867D1F2065656500BF765A /* Toolbar Images */; };
+		6CC28B36207BCF3C000BAAE2 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC28B31207BCF3A000BAAE2 /* settings.png */; };
+		6CC28B37207BCF3C000BAAE2 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC28B32207BCF3A000BAAE2 /* home.png */; };
+		6CC28B38207BCF3C000BAAE2 /* leaderboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC28B33207BCF3B000BAAE2 /* leaderboard.png */; };
+		6CC28B39207BCF3C000BAAE2 /* Rules.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC28B34207BCF3B000BAAE2 /* Rules.png */; };
+		6CC28B3A207BCF3C000BAAE2 /* HallofFame.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CC28B35207BCF3B000BAAE2 /* HallofFame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +68,11 @@
 		23D67DBC2058357A00D7F007 /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
 		68D15C561FEC29D20013FE91 /* rulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
 		68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hallOfFameViewController.swift; sourceTree = "<group>"; };
-		6C867D1F2065656500BF765A /* Toolbar Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Toolbar Images"; path = "../../Desktop/Toolbar Images"; sourceTree = "<group>"; };
+		6CC28B31207BCF3A000BAAE2 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		6CC28B32207BCF3A000BAAE2 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		6CC28B33207BCF3B000BAAE2 /* leaderboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaderboard.png; sourceTree = "<group>"; };
+		6CC28B34207BCF3B000BAAE2 /* Rules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rules.png; sourceTree = "<group>"; };
+		6CC28B35207BCF3B000BAAE2 /* HallofFame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HallofFame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,6 @@
 				23631CE51FDEFAA100FE27BA /* MasterMind AppTests */,
 				23631CF01FDEFAA100FE27BA /* MasterMind AppUITests */,
 				23631CCF1FDEFAA100FE27BA /* Products */,
-				6C867D1F2065656500BF765A /* Toolbar Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +123,11 @@
 		23631CD01FDEFAA100FE27BA /* MasterMind App */ = {
 			isa = PBXGroup;
 			children = (
+				6CC28B35207BCF3B000BAAE2 /* HallofFame.png */,
+				6CC28B32207BCF3A000BAAE2 /* home.png */,
+				6CC28B33207BCF3B000BAAE2 /* leaderboard.png */,
+				6CC28B34207BCF3B000BAAE2 /* Rules.png */,
+				6CC28B31207BCF3A000BAAE2 /* settings.png */,
 				23631CD11FDEFAA100FE27BA /* AppDelegate.swift */,
 				2385CE262028CD3F0011BD8F /* App.swift */,
 				23198554202B6E1F00B32B2F /* Game.swift */,
@@ -263,9 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				23631CDC1FDEFAA100FE27BA /* LaunchScreen.storyboard in Resources */,
+				6CC28B3A207BCF3C000BAAE2 /* HallofFame.png in Resources */,
+				6CC28B38207BCF3C000BAAE2 /* leaderboard.png in Resources */,
+				6CC28B36207BCF3C000BAAE2 /* settings.png in Resources */,
+				6CC28B37207BCF3C000BAAE2 /* home.png in Resources */,
 				23631CD91FDEFAA100FE27BA /* Assets.xcassets in Resources */,
 				23631CD71FDEFAA100FE27BA /* Main.storyboard in Resources */,
-				6C867D202065656500BF765A /* Toolbar Images in Resources */,
+				6CC28B39207BCF3C000BAAE2 /* Rules.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
