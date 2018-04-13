@@ -5,7 +5,6 @@
 //  Created by HOUDEK, JUSTIN on 1/9/18.
 //  Copyright © 2018 District196. All rights reserved.
 //
-
 import UIKit
 
 class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate
@@ -57,7 +56,7 @@ class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             switch activeTextField
             {
                 case 1:
-                    return teamSelect[row]
+                    return teamNames[row]
                 default:
                     return ""
             }
@@ -75,7 +74,7 @@ class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             switch activeTextField
             {
                 case 1:
-                    return teamSelect.count
+                    return teamNames.count
                 default:
                     return 0
             }
@@ -93,7 +92,7 @@ class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             switch activeTextField
             {
                 case 1:
-                    activeValue = teamSelect[row]
+                    activeValue = teamNames[row]
                 default:
                     activeValue = ""
             }
@@ -129,7 +128,7 @@ class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             switch activeTextField
             {
                 case 1:
-                    row = teamSelect.index(of: currentValue)
+                    row = teamNames.index(of: currentValue)
                 default:
                     row = nil
             }
@@ -178,7 +177,7 @@ class optionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         {
             let text = newTeam.text!
             master.addTeam(str: text)
-            teamSelect.append(newTeam.text!)
+            teamNames.append(newTeam.text!)
         }
         newTeam.text = ""
         var names = [String]()

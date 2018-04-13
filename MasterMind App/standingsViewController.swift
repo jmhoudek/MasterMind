@@ -22,6 +22,10 @@ class standingsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
         if(master.teams.count > 0)
         {
             first.text = master.teams[0].name
@@ -50,9 +54,7 @@ class standingsViewController: UIViewController
         {
             seventh.text = master.teams[6].name
         }
-        // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
