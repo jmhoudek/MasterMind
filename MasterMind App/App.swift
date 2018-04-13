@@ -8,8 +8,9 @@
 
 import UIKit
 import Foundation
+import os.log
 
-class App: NSObject
+class App: NSObject, Codable
 {
     var teams = [Team]()
     var teamSort = [Team]()
@@ -186,6 +187,43 @@ class App: NSObject
                     }
                 }
             }
+        }
+    }
+    
+    func archive(fileName: String) {
+        let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent(fileName)
+        do {
+            let encodedData = try PropertyListEncoder().encode(self)
+            let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(encodedData, toFile: archiveURL.path)
+            if isSuccessfulSave {
+                os_log("Data successfully saved to file.", log: OSLog.default, type: .debug)
+            } else {
+                os_log("Failed to save data...", log: OSLog.default, type: .error)
+            }
+        } catch {
+            os_log("Failed to save data...", log: OSLog.default, type: .error)
+        }
+    }
+   
+    func restore(fileName: String) {
+        let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent(fileName)
+        if let recoveredDataCoded = NSKeyedUnarchiver.unarchiveObject(withFile: archiveURL.path) as? Data {
+            do {
+                // *** Replace "MeetClass" on the next line with the name of the class to be persistent. ***
+                let recoveredData = try PropertyListDecoder().decode(App.self, from: recoveredDataCoded)
+                os_log("Data successfully recovered from file.", log: OSLog.default, type: .debug)
+                // *** Replace all the assignment statements BELOW to "restore" all properties of the object ***
+                 teams = recoveredData.teams
+                 teamSort = recoveredData.teamSort
+                 hallOfFame = recoveredData.hallOfFame
+                // *** Replace all the assignment statements ABOVE to "restore" all properties of the object ***
+            } catch {
+                os_log("Failed to recover data", log: OSLog.default, type: .error)
+            }
+        } else {
+            os_log("Failed to recover data", log: OSLog.default, type: .error)
         }
     }
 }
