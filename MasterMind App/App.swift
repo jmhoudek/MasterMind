@@ -55,11 +55,11 @@ class App: NSObject, Codable
             }
             index2 += 1
         }
-        for x in teamSelect
+        for x in teamNames
         {
             if (str.isEqual(x))
             {
-                teamSelect.remove(at: index3)
+                teamNames.remove(at: index3)
                 break
             }
             index3 += 1
