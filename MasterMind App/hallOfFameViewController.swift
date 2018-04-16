@@ -19,6 +19,16 @@ class hallOfFameViewController: UIViewController
     @IBOutlet weak var goldSilverBronze: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.goldSilverBronze.image = UIImage(named: "Image2")
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        first.text = ""
+        second.text = ""
+        third.text = ""
+        fourth.text = ""
+        fifth.text = ""
         if(master.hallOfFame.count > 0)
         {
             first.text = master.hallOfFame[0].name
@@ -39,9 +49,6 @@ class hallOfFameViewController: UIViewController
         {
             fifth.text = master.hallOfFame[4].name
         }
-
-        // Do any additional setup after loading the view.
-        self.goldSilverBronze.image = UIImage(named: "Image2")
     }
     
     override func didReceiveMemoryWarning() {

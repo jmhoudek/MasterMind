@@ -19,6 +19,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        selectTeam.delegate = self
+        selectTeam.dataSource = self
+        discardPicker.delegate = self
+        discardPicker.dataSource = self
+        maxGames.delegate = self
+        maxGames.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -62,11 +68,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             teamNames.append(text)
         }
         newTeamText.text = ""
+        selectTeam.delegate = self
+        selectTeam.dataSource = self
+        discardPicker.delegate = self
+        discardPicker.dataSource = self
     }
     
     @IBAction func discardTeam(_ sender: Any)
     {
-        
+        master.discardTeam(str: toBeDiscarded)
+        selectTeam.delegate = self
+        selectTeam.dataSource = self
+        discardPicker.delegate = self
+        discardPicker.dataSource = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -84,7 +98,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             if( row == 0 )
             {
-                return "Select Team"
+                return "Select Team:"
             }
             else
             {
@@ -93,7 +107,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         else
         {
-            return teamNames[row]
+            if( row == 0 )
+            {
+                return "Select Team:"
+            }
+            else
+            {
+                return teamNames[row - 1]
+            }
         }
     }
     
@@ -109,7 +130,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         else
         {
-            return teamNames.count
+            return teamNames.count + 1
         }
     }
     
@@ -117,11 +138,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     {
         if( pickerView == maxGames )
         {
-            
+            if( row > 0 )
+            {
+                gameAmount = Int(amount[row])!
+            }
         }
         if( pickerView == discardPicker )
         {
-            
+            if( row > 0 )
+            {
+                toBeDiscarded = teamNames[row - 1]
+            }
         }
     }
     

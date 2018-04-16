@@ -26,33 +26,40 @@ class standingsViewController: UIViewController
     
     override func viewDidAppear(_ animated: Bool)
     {
-        if(master.teams.count > 0)
+        first.text = ""
+        second.text = ""
+        third.text = ""
+        fourth.text = ""
+        fifth.text = ""
+        sixth.text = ""
+        seventh.text = ""
+        if(master.teamSort.count > 0)
         {
-            first.text = master.teams[0].name
+            first.text = master.teamSort[0].name
         }
-        if(master.teams.count > 1)
+        if(master.teamSort.count > 1)
         {
-            second.text = master.teams[1].name
+            second.text = master.teamSort[1].name
         }
-        if(master.teams.count > 2)
+        if(master.teamSort.count > 2)
         {
-            third.text = master.teams[2].name
+            third.text = master.teamSort[2].name
         }
-        if(master.teams.count > 3)
+        if(master.teamSort.count > 3)
         {
-            fourth.text = master.teams[3].name
+            fourth.text = master.teamSort[3].name
         }
-        if(master.teams.count > 4)
+        if(master.teamSort.count > 4)
         {
-            fifth.text = master.teams[4].name
+            fifth.text = master.teamSort[4].name
         }
-        if(master.teams.count > 5)
+        if(master.teamSort.count > 5)
         {
-            sixth.text = master.teams[5].name
+            sixth.text = master.teamSort[5].name
         }
-        if(master.teams.count > 6)
+        if(master.teamSort.count > 6)
         {
-            seventh.text = master.teams[6].name
+            seventh.text = master.teamSort[6].name
         }
     }
     override func didReceiveMemoryWarning()

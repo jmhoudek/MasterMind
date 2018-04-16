@@ -27,7 +27,7 @@ class App: NSObject, Codable
     func addTeam(str: String)
     {
         teams.append(Team(tname: str))
-        
+        teamSort.append(Team(tname: str))
     }
     
     func discardTeam(str: String)
