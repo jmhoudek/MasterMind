@@ -10,6 +10,7 @@ import UIKit
 
 class gameViewController: UIViewController
 {
+    @IBOutlet weak var numberUnderline: UIImageView!
     @IBOutlet weak var guessString: UITextField!
     @IBOutlet weak var num1: UILabel!
     @IBOutlet weak var num2: UILabel!
@@ -55,6 +56,7 @@ class gameViewController: UIViewController
         super.viewDidLoad()
         startGame()
         attempts = 0
+        self.numberUnderline.image = UIImage(named: "Image1")
     }
 
     override func didReceiveMemoryWarning()
