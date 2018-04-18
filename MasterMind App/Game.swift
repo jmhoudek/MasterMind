@@ -123,13 +123,13 @@ class Game: NSObject
     //function that prints the black dots
     func blackDot() -> String
     {
-        return(" ⚫️")
+        return("⚫️ ")
     }
     
     //function that prints white dots
     func whiteDot() -> String
     {
-        return(" ⚪️")
+        return("⚪️ ")
     }
 
 }

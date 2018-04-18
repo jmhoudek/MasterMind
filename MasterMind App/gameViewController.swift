@@ -12,6 +12,7 @@ class gameViewController: UIViewController
 {
     @IBOutlet weak var numberUnderline: UIImageView!
     @IBOutlet weak var guessString: UITextField!
+    
     @IBOutlet weak var num1: UILabel!
     @IBOutlet weak var num2: UILabel!
     @IBOutlet weak var num3: UILabel!
@@ -46,10 +47,26 @@ class gameViewController: UIViewController
     @IBOutlet weak var dots7: UILabel!
     @IBOutlet weak var dots8: UILabel!
     
+    @IBOutlet weak var one: UIButton!
+    @IBOutlet weak var two: UIButton!
+    @IBOutlet weak var three: UIButton!
+    @IBOutlet weak var four: UIButton!
+    @IBOutlet weak var five: UIButton!
+    @IBOutlet weak var six: UIButton!
+    @IBOutlet weak var seven: UIButton!
+    @IBOutlet weak var eight: UIButton!
+    @IBOutlet weak var nine: UIButton!
+    @IBOutlet weak var zero: UIButton!
+    @IBOutlet weak var delete: UIButton!
+    @IBOutlet weak var enter: UIButton!
+    
+    
+    var shouldEnd = false
     
     var digiOne = 0
     var digiTwo = 0
     var digiThree = 0
+    var guess = ""
     
     override func viewDidLoad()
     {
@@ -57,6 +74,18 @@ class gameViewController: UIViewController
         startGame()
         attempts = 0
         self.numberUnderline.image = UIImage(named: "Image1")
+        one.isEnabled = true
+        two.isEnabled = true
+        three.isEnabled = true
+        four.isEnabled = true
+        five.isEnabled = true
+        six.isEnabled = true
+        seven.isEnabled = true
+        eight.isEnabled = true
+        nine.isEnabled = true
+        zero.isEnabled = true
+        delete.isEnabled = true
+        enter.isEnabled = true
     }
 
     override func didReceiveMemoryWarning()
@@ -317,6 +346,38 @@ class gameViewController: UIViewController
             dots()
             guessString.text = ""
             guess = ""
+            isDone()
+        }
+    }
+    
+    func isDone()
+    {
+        if(shouldEnd)
+        {
+            shouldEnd = false
+            one.isEnabled = false
+            two.isEnabled = false
+            three.isEnabled = false
+            four.isEnabled = false
+            five.isEnabled = false
+            six.isEnabled = false
+            seven.isEnabled = false
+            eight.isEnabled = false
+            nine.isEnabled = false
+            zero.isEnabled = false
+            delete.isEnabled = false
+            enter.isEnabled = false
+            
+            var index = 0
+            for x in master.teams
+            {
+                if (currentPlayer.isEqual(x.name))
+                {
+                    master.teams[index].update(newScore: Double(attempts))
+                    break
+                }
+                index += 1
+            }
         }
     }
     
@@ -383,41 +444,73 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots1.text = dotString
+            if(dots1.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 2 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots2.text = dotString
+            if(dots2.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 3 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots3.text = dotString
+            if(dots3.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 4 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots4.text = dotString
+            if(dots4.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 5 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots5.text = dotString
+            if(dots5.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 6 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots6.text = dotString
+            if(dots6.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 7 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots7.text = dotString
+            if(dots7.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
         if( attempts == 8 )
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots8.text = dotString
+            if(dots8.text == "⚫️ ⚫️ ⚫️ ")
+            {
+                shouldEnd = true
+            }
         }
     }
 
