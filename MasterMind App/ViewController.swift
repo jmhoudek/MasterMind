@@ -166,6 +166,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                         gamesPlayedText.text = String(master.teams[index].games)
                         break
                     }
+                    else
+                    {
+                        avgScoreText.text = ""
+                        gamesPlayedText.text = ""
+                    }
                     index += 1
                 }
             }
