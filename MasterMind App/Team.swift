@@ -23,7 +23,15 @@ class Team: NSObject, Codable
         avg = 0
         games = 0
         
-}
+    }
+    
+    func update( newScore: Double )
+    {
+        games = games + 1
+        var newAvg = (avg * Double(games - 1) + Double(newScore)) / Double(games)
+        avg = newAvg
+    }
+    
     func archive(fileName: String) {
         let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent(fileName)

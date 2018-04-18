@@ -11,8 +11,8 @@ import UIKit
 var master = App()
 var newGame = Game()
 var teamNames = [String]()
-var guess = ""
 var attempts = 0
+var currentPlayer = ""
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
 {
@@ -48,6 +48,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var maxGames: UIPickerView!
     
     @IBOutlet weak var newTeamText: UITextField!
+    @IBOutlet weak var avgScoreText: UILabel!
+    @IBOutlet weak var gamesPlayedText: UILabel!
     
     let amount = ["Select Amount", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
     
@@ -148,6 +150,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if( row > 0 )
             {
                 toBeDiscarded = teamNames[row - 1]
+            }
+        }
+        else
+        {
+            if( row > 0 )
+            {
+                currentPlayer = teamNames[row - 1]
+                var index = 0
+                for x in master.teams
+                {
+                    if (teamNames[row - 1].isEqual(x.name))
+                    {
+                        avgScoreText.text = String(master.teams[index].avg)
+                        gamesPlayedText.text = String(master.teams[index].games)
+                        break
+                    }
+                    index += 1
+                }
             }
         }
     }

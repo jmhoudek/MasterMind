@@ -504,11 +504,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-TB-PAe">
+                                <rect key="frame" x="44" y="699" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Rb8-Cg-yW8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9370916485786438" green="0.93694382905960083" blue="0.95754462480545044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="590" height="700"/>
                     <connections>
+                        <outlet property="delete" destination="90e-Ig-Bag" id="Aax-ae-RL6"/>
                         <outlet property="dots1" destination="M2m-Gu-Dnv" id="qzU-v3-Z9l"/>
                         <outlet property="dots2" destination="07I-Mh-ir8" id="YgB-le-sbx"/>
                         <outlet property="dots3" destination="fKt-VV-9lJ" id="GM5-Tl-Zhj"/>
@@ -517,7 +526,12 @@
                         <outlet property="dots6" destination="3bf-Cq-T69" id="DgP-SO-C57"/>
                         <outlet property="dots7" destination="0KJ-EY-EpA" id="TGk-1S-OQk"/>
                         <outlet property="dots8" destination="dXN-la-yTi" id="7KU-3K-6yF"/>
+                        <outlet property="eight" destination="DV8-iI-dqP" id="mc8-fV-2q4"/>
+                        <outlet property="enter" destination="3gk-FA-SvP" id="J2y-Pz-BdN"/>
+                        <outlet property="five" destination="4ML-ml-zpB" id="Jgk-ZQ-ytZ"/>
+                        <outlet property="four" destination="vKx-t3-LPI" id="zxG-Mf-vc8"/>
                         <outlet property="guessString" destination="Suo-Dg-2A6" id="bRd-HU-gpG"/>
+                        <outlet property="nine" destination="RbA-7h-8Ih" id="8Ee-NB-KPx"/>
                         <outlet property="num1" destination="kQJ-LH-w08" id="Ygj-AN-Idv"/>
                         <outlet property="num10" destination="m8S-Z7-zEB" id="xiR-Cz-tnZ"/>
                         <outlet property="num11" destination="ou8-oB-e0V" id="NqR-ar-0NP"/>
@@ -543,6 +557,12 @@
                         <outlet property="num8" destination="XzB-ga-GHj" id="iXE-zV-Rfg"/>
                         <outlet property="num9" destination="WI1-Kv-gf8" id="1FB-Hk-TfC"/>
                         <outlet property="numberUnderline" destination="Dd9-0m-NFa" id="5Q4-7Z-rsi"/>
+                        <outlet property="one" destination="Jvp-Bd-5Oz" id="Vzf-xe-ExZ"/>
+                        <outlet property="seven" destination="x3a-jI-KdQ" id="1wh-9e-Uqu"/>
+                        <outlet property="six" destination="YNn-8U-0pm" id="CEf-1b-eM6"/>
+                        <outlet property="three" destination="hbt-o8-MeB" id="dJi-O5-d5W"/>
+                        <outlet property="two" destination="Zv7-sh-Kqx" id="Fnc-Bl-eEE"/>
+                        <outlet property="zero" destination="F6z-so-Nu6" id="Hrh-UX-T7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8T-YK-pPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1235,7 +1255,7 @@
                                 <rect key="frame" x="233" y="355" width="152" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94110500812530518" green="0.93685287237167358" blue="0.96157747507095337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1243,14 +1263,6 @@
                                 <rect key="frame" x="28" y="496" width="194" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-8M-xf2">
-                                <rect key="frame" x="233" y="496" width="152" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94110500812530518" green="0.93685287237167358" blue="0.96157747507095337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1357,6 +1369,14 @@
                                 <rect key="frame" x="777" y="309" width="186" height="145"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-8M-xf2">
+                                <rect key="frame" x="236" y="477" width="121" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94110500812530518" green="0.93685287237167358" blue="0.96157747507095337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1364,7 +1384,9 @@
                         <color key="badgeColor" red="0.35050058360000003" green="0.78535181279999999" blue="0.98559325929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="avgScoreText" destination="2VF-pn-nfs" id="khc-S9-OTZ"/>
                         <outlet property="discardPicker" destination="RTW-fc-qao" id="LPk-gj-1cv"/>
+                        <outlet property="gamesPlayedText" destination="9j0-8M-xf2" id="qXy-C6-xDc"/>
                         <outlet property="maxGames" destination="Omy-CV-RAT" id="HWZ-2S-qpQ"/>
                         <outlet property="newTeamText" destination="w7B-qk-RQ9" id="Qrj-hz-mdU"/>
                         <outlet property="selectTeam" destination="Tyr-Iz-v6b" id="CNT-Vv-bpN"/>
@@ -1373,154 +1395,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.203125" y="139.84375"/>
-        </scene>
-        <!--Options-->
-        <scene sceneID="RAV-D6-8Ws">
-            <objects>
-                <viewController title="Options" id="ImH-z3-GkP" customClass="optionsViewController" customModule="MasterMind_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7vq-TG-D15"/>
-                        <viewControllerLayoutGuide type="bottom" id="4xE-VM-0kk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NX3-QD-CVj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-KN-oia">
-                                <rect key="frame" x="34" y="149" width="424" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZE-ji-nWI">
-                                <rect key="frame" x="34" y="125" width="171" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Max Games:">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="SFMono-Regular"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRA-da-RJF">
-                                <rect key="frame" x="20" y="320" width="416" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content=" New Team Name:">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="SFMono-Regular"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5O-44-60d">
-                                <rect key="frame" x="20" y="487" width="172" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Discard Team:">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="SFMono-Regular"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdL-DX-I5S">
-                                <rect key="frame" x="319" y="514" width="145" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.51681436059999997" blue="0.28642337890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Discard">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="28" name="SFMono-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="discardTeam:" destination="ImH-z3-GkP" eventType="touchUpInside" id="12X-KQ-fE1"/>
-                                </connections>
-                            </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-RI-Oi9">
-                                <rect key="frame" x="20" y="664" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.29785293340000002" green="0.8539462686" blue="0.3898153305" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="timerOnOff:" destination="ImH-z3-GkP" eventType="valueChanged" id="Taa-DV-EPK"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9Y-W2-DCP">
-                                <rect key="frame" x="20" y="610" width="218" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Timer On/Off">
-                                        <attributes>
-                                            <font key="NSFont" size="25" name="SFMono-Regular"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Team" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-gw-87n">
-                                <rect key="frame" x="20" y="537" width="243" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="siU-dL-wA8">
-                                <rect key="frame" x="20" y="423" width="243" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-OS-bJX">
-                                <rect key="frame" x="319" y="405" width="145" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.51681436059999997" blue="0.28642337890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Create">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="28" name="SFMono-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="createTeam:" destination="ImH-z3-GkP" eventType="touchUpInside" id="Hne-xd-OZ0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" landscapeImage="settings.png" id="E4W-zS-0Iq"/>
-                    <connections>
-                        <outlet property="discardText" destination="Xvu-gw-87n" id="5BB-9n-7pz"/>
-                        <outlet property="gameSelect" destination="gy9-KN-oia" id="Wm2-uo-5Ou"/>
-                        <outlet property="newTeam" destination="siU-dL-wA8" id="2Ey-kL-HFV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qh-iK-D1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="787" y="140"/>
         </scene>
         <!--Hall of Fame-->
         <scene sceneID="UKp-2e-9VV">
@@ -1725,6 +1599,8 @@
         <image name="Rules.png" width="25" height="25"/>
         <image name="home.png" width="25" height="25"/>
         <image name="leaderboard.png" width="25" height="25"/>
-        <image name="settings.png" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pg7-sl-b9u"/>
+    </inferredMetricsTieBreakers>
 </document>
