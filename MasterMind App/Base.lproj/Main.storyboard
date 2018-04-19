@@ -520,7 +520,6 @@
                         <outlet property="num7" destination="h8T-FT-ZIf" id="Oy7-t0-uLK"/>
                         <outlet property="num8" destination="XzB-ga-GHj" id="iXE-zV-Rfg"/>
                         <outlet property="num9" destination="WI1-Kv-gf8" id="1FB-Hk-TfC"/>
-                        <outlet property="numberUnderline" destination="Dd9-0m-NFa" id="5Q4-7Z-rsi"/>
                         <outlet property="one" destination="Jvp-Bd-5Oz" id="Vzf-xe-ExZ"/>
                         <outlet property="seven" destination="x3a-jI-KdQ" id="1wh-9e-Uqu"/>
                         <outlet property="six" destination="YNn-8U-0pm" id="CEf-1b-eM6"/>
@@ -1617,7 +1616,6 @@
     </scenes>
     <resources>
         <image name="HallofFame.png" width="25" height="25"/>
-        <image name="Image1" width="366" height="634"/>
         <image name="Image2" width="731" height="496"/>
         <image name="Rules.png" width="25" height="25"/>
         <image name="home.png" width="25" height="25"/>

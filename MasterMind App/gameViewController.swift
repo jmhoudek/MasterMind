@@ -10,7 +10,6 @@ import UIKit
 
 class gameViewController: UIViewController
 {
-    @IBOutlet weak var numberUnderline: UIImageView!
     @IBOutlet weak var guessString: UITextField!
     
     @IBOutlet weak var num1: UILabel!
@@ -73,7 +72,6 @@ class gameViewController: UIViewController
         super.viewDidLoad()
         startGame()
         attempts = 0
-        self.numberUnderline.image = UIImage(named: "Image1")
         one.isEnabled = true
         two.isEnabled = true
         three.isEnabled = true
