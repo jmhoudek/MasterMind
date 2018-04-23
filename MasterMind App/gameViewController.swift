@@ -10,6 +10,7 @@ import UIKit
 
 class gameViewController: UIViewController
 {
+    
     @IBOutlet weak var numberUnderline: UIImageView!
     @IBOutlet weak var guessString: UITextField!
     
