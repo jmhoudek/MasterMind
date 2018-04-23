@@ -10,7 +10,6 @@ import UIKit
 
 class standingsViewController: UIViewController
 {
-    
     @IBOutlet weak var first: UILabel!
     @IBOutlet weak var second: UILabel!
     @IBOutlet weak var third: UILabel!
@@ -18,6 +17,21 @@ class standingsViewController: UIViewController
     @IBOutlet weak var fifth: UILabel!
     @IBOutlet weak var sixth: UILabel!
     @IBOutlet weak var seventh: UILabel!
+    @IBOutlet weak var firstAS: UILabel!
+    @IBOutlet weak var secondAS: UILabel!
+    @IBOutlet weak var thirdAS: UILabel!
+    @IBOutlet weak var fourthAS: UILabel!
+    @IBOutlet weak var fifthAS: UILabel!
+    @IBOutlet weak var sixthAS: UILabel!
+    @IBOutlet weak var seventhAS: UILabel!
+    @IBOutlet weak var firstGP: UILabel!
+    @IBOutlet weak var secondGP: UILabel!
+    @IBOutlet weak var thirdGP: UILabel!
+    @IBOutlet weak var fourthGP: UILabel!
+    @IBOutlet weak var fifthGP: UILabel!
+    @IBOutlet weak var sixthGP: UILabel!
+    @IBOutlet weak var seventhGP: UILabel!
+    @IBOutlet weak var firstAT: UILabel!
     
     override func viewDidLoad()
     {
