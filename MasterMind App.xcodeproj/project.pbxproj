@@ -22,6 +22,7 @@
 		23D67DBD2058357A00D7F007 /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D67DBC2058357A00D7F007 /* gameViewController.swift */; };
 		68D15C571FEC29D20013FE91 /* rulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C561FEC29D20013FE91 /* rulesViewController.swift */; };
 		68D15C5D1FEC2B080013FE91 /* hallOfFameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */; };
+		6C423BB020865726002D4B0E /* Toolbar Images in Resources */ = {isa = PBXBuildFile; fileRef = 6C423BAF20865726002D4B0E /* Toolbar Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		23D67DBC2058357A00D7F007 /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
 		68D15C561FEC29D20013FE91 /* rulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rulesViewController.swift; sourceTree = "<group>"; };
 		68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hallOfFameViewController.swift; sourceTree = "<group>"; };
+		6C423BAF20865726002D4B0E /* Toolbar Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Toolbar Images"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				23962767202A1E9500FAD2C0 /* standingsViewController.swift */,
 				68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */,
 				23631CD51FDEFAA100FE27BA /* Main.storyboard */,
+				6C423BAF20865726002D4B0E /* Toolbar Images */,
 				23631CD81FDEFAA100FE27BA /* Assets.xcassets */,
 				23631CDA1FDEFAA100FE27BA /* LaunchScreen.storyboard */,
 				23631CDD1FDEFAA100FE27BA /* Info.plist */,
@@ -262,6 +265,7 @@
 				23631CDC1FDEFAA100FE27BA /* LaunchScreen.storyboard in Resources */,
 				23631CD91FDEFAA100FE27BA /* Assets.xcassets in Resources */,
 				23631CD71FDEFAA100FE27BA /* Main.storyboard in Resources */,
+				6C423BB020865726002D4B0E /* Toolbar Images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

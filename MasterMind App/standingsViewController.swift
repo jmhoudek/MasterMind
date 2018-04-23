@@ -33,6 +33,10 @@ class standingsViewController: UIViewController
         fifth.text = ""
         sixth.text = ""
         seventh.text = ""
+        updateLables()
+    }
+    func updateLables()
+    {
         if(master.teamSort.count > 0)
         {
             first.text = master.teamSort[0].name

@@ -47,6 +47,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var discardPicker: UIPickerView!
     @IBOutlet weak var maxGames: UIPickerView!
     
+    
+    
     @IBOutlet weak var newTeamText: UITextField!
     @IBOutlet weak var avgScoreText: UILabel!
     @IBOutlet weak var gamesPlayedText: UILabel!
@@ -59,21 +61,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func createTeam(_ sender: Any)
     {
-        if(newTeamText.isEqual(""))
+        if( teamNames.count < 7)
         {
-            return
+            if(newTeamText.isEqual(""))
+            {
+                return
+            }
+            else
+            {
+                let text = newTeamText.text!
+                master.addTeam(str: text)
+                teamNames.append(text)
+            }
+            newTeamText.text = ""
+            selectTeam.delegate = self
+            selectTeam.dataSource = self
+            discardPicker.delegate = self
+            discardPicker.dataSource = self
         }
-        else
-        {
-            let text = newTeamText.text!
-            master.addTeam(str: text)
-            teamNames.append(text)
-        }
-        newTeamText.text = ""
-        selectTeam.delegate = self
-        selectTeam.dataSource = self
-        discardPicker.delegate = self
-        discardPicker.dataSource = self
     }
     
     @IBAction func discardTeam(_ sender: Any)
@@ -83,6 +88,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
+        self.selectTeam.selectRow(0, inComponent: 0, animated: true)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: true)
+        avgScoreText.text = ""
+        gamesPlayedText.text = ""
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -168,6 +177,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     index += 1
                 }
+            }
+            else
+            {
+                avgScoreText.text = ""
+                gamesPlayedText.text = ""
             }
         }
     }

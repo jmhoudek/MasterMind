@@ -74,7 +74,6 @@ class gameViewController: UIViewController
         super.viewDidLoad()
         startGame()
         attempts = 0
-        self.numberUnderline.image = UIImage(named: "Image1")
         one.isEnabled = true
         two.isEnabled = true
         three.isEnabled = true
@@ -112,18 +111,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "0"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 0
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 0
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 0
+            if( guess.count == 1 )
+            {
+                digiOne = 0
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 0
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 0
+            }
         }
     }
     
@@ -133,18 +132,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "1"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 1
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 1
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 1
+            if( guess.count == 1 )
+            {
+                digiOne = 1
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 1
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 1
+            }
         }
     }
     
@@ -154,18 +153,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "2"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 2
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 2
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 2
+            if( guess.count == 1 )
+            {
+                digiOne = 2
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 2
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 2
+            }
         }
     }
     
@@ -175,18 +174,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "3"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 3
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 3
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 3
+            if( guess.count == 1 )
+            {
+                digiOne = 3
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 3
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 3
+            }
         }
     }
     
@@ -196,18 +195,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "4"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 4
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 4
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 4
+            if( guess.count == 1 )
+            {
+                digiOne = 4
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 4
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 4
+            }
         }
     }
     
@@ -217,18 +216,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "5"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 5
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 5
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 5
+            if( guess.count == 1 )
+            {
+                digiOne = 5
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 5
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 5
+            }
         }
     }
     
@@ -238,19 +237,20 @@ class gameViewController: UIViewController
         {
             guess = guess + "6"
             guessString.text = guess
+            if( guess.count == 1 )
+            {
+                digiOne = 6
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 6
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 6
+            }
         }
-        if( guess.count == 1 )
-        {
-            digiOne = 6
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 6
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 6
-        }
+        
     }
     
     @IBAction func addSeven(_ sender: Any)
@@ -259,18 +259,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "7"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 7
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 7
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 7
+            if( guess.count == 1 )
+            {
+                digiOne = 7
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 7
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 7
+            }
         }
     }
     
@@ -280,19 +280,20 @@ class gameViewController: UIViewController
         {
             guess = guess + "8"
             guessString.text = guess
+            if( guess.count == 1 )
+            {
+                digiOne = 8
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 8
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 8
+            }
         }
-        if( guess.count == 1 )
-        {
-            digiOne = 8
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 8
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 8
-        }
+        
     }
     
     @IBAction func addNine(_ sender: Any)
@@ -301,18 +302,18 @@ class gameViewController: UIViewController
         {
             guess = guess + "9"
             guessString.text = guess
-        }
-        if( guess.count == 1 )
-        {
-            digiOne = 9
-        }
-        if( guess.count == 2 )
-        {
-            digiTwo = 9
-        }
-        if( guess.count == 3 )
-        {
-            digiThree = 9
+            if( guess.count == 1 )
+            {
+                digiOne = 9
+            }
+            if( guess.count == 2 )
+            {
+                digiTwo = 9
+            }
+            if( guess.count == 3 )
+            {
+                digiThree = 9
+            }
         }
     }
     
@@ -353,7 +354,7 @@ class gameViewController: UIViewController
     
     func isDone()
     {
-        if(shouldEnd)
+        if(shouldEnd || attempts == 8)
         {
             shouldEnd = false
             one.isEnabled = false
