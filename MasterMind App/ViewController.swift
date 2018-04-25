@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var avgScoreText: UILabel!
     @IBOutlet weak var gamesPlayedText: UILabel!
     
-    let amount = ["Select Amount", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
+    let amount = ["Select Amount:", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
     
     var toBeDiscarded = ""
     
