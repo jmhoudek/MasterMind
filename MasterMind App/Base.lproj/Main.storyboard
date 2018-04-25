@@ -1115,6 +1115,7 @@
                     <connections>
                         <outlet property="fifth" destination="EdA-PB-TE0" id="BzL-f5-zuL"/>
                         <outlet property="fifthAS" destination="FNO-Uz-1ts" id="8cD-2c-1PI"/>
+                        <outlet property="fifthAT" destination="eQq-KN-31F" id="b8x-Bl-gRR"/>
                         <outlet property="fifthGP" destination="Btf-ie-LDg" id="qpL-19-oHO"/>
                         <outlet property="first" destination="yPS-Z8-rfx" id="yBw-bu-Siq"/>
                         <outlet property="firstAS" destination="Yjh-sG-ihg" id="gsR-BV-jhb"/>
@@ -1122,18 +1123,23 @@
                         <outlet property="firstGP" destination="nYR-f9-QiB" id="Fis-bc-eJA"/>
                         <outlet property="fourth" destination="1l6-9b-Sls" id="d0j-0E-6pB"/>
                         <outlet property="fourthAS" destination="jan-BT-3UU" id="Ro3-aR-qBm"/>
+                        <outlet property="fourthAT" destination="2Dw-Gm-X9h" id="agQ-iu-TYH"/>
                         <outlet property="fourthGP" destination="d9K-p5-rqU" id="qvk-0A-c1K"/>
                         <outlet property="second" destination="Z8I-fl-wyB" id="ctf-0N-x7r"/>
                         <outlet property="secondAS" destination="EqK-QT-4gn" id="RJN-1I-yv3"/>
+                        <outlet property="secondAT" destination="5OJ-xh-ijz" id="BdR-Ri-9fd"/>
                         <outlet property="secondGP" destination="qYd-Lv-I0c" id="kdi-WH-nvC"/>
                         <outlet property="seventh" destination="Dm9-N3-wcd" id="Cas-IG-Y1o"/>
                         <outlet property="seventhAS" destination="AGA-vB-onN" id="hwz-Hg-EiB"/>
+                        <outlet property="seventhAT" destination="69u-2U-KXW" id="Y2f-Xb-N6t"/>
                         <outlet property="seventhGP" destination="qZa-bt-zOC" id="K9G-wI-HfW"/>
                         <outlet property="sixth" destination="l0f-4W-QzO" id="OND-5i-GVy"/>
                         <outlet property="sixthAS" destination="Pi4-1N-iFe" id="0XW-xm-a95"/>
+                        <outlet property="sixthAT" destination="eZd-dm-l39" id="TZh-zl-FH8"/>
                         <outlet property="sixthGP" destination="vHP-Uj-lFd" id="0Jt-hn-mBX"/>
                         <outlet property="third" destination="sGv-PX-duU" id="luW-Ow-3iV"/>
                         <outlet property="thirdAS" destination="fRn-c7-m6Y" id="F1H-Ou-vol"/>
+                        <outlet property="thirdAT" destination="jJf-8b-aox" id="F7L-7k-T13"/>
                         <outlet property="thirdGP" destination="lvG-QK-yTK" id="8iB-xO-AVK"/>
                     </connections>
                 </viewController>
@@ -1150,7 +1156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="719"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-Gd-oVd">
@@ -1598,6 +1604,6 @@
         <image name="leaderboard.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pg7-sl-b9u"/>
+        <segue reference="Czi-28-Z0N"/>
     </inferredMetricsTieBreakers>
 </document>

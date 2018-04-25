@@ -17,6 +17,7 @@ class standingsViewController: UIViewController
     @IBOutlet weak var fifth: UILabel!
     @IBOutlet weak var sixth: UILabel!
     @IBOutlet weak var seventh: UILabel!
+    
     @IBOutlet weak var firstAS: UILabel!
     @IBOutlet weak var secondAS: UILabel!
     @IBOutlet weak var thirdAS: UILabel!
@@ -24,6 +25,7 @@ class standingsViewController: UIViewController
     @IBOutlet weak var fifthAS: UILabel!
     @IBOutlet weak var sixthAS: UILabel!
     @IBOutlet weak var seventhAS: UILabel!
+    
     @IBOutlet weak var firstGP: UILabel!
     @IBOutlet weak var secondGP: UILabel!
     @IBOutlet weak var thirdGP: UILabel!
@@ -31,7 +33,16 @@ class standingsViewController: UIViewController
     @IBOutlet weak var fifthGP: UILabel!
     @IBOutlet weak var sixthGP: UILabel!
     @IBOutlet weak var seventhGP: UILabel!
+    
     @IBOutlet weak var firstAT: UILabel!
+    @IBOutlet weak var secondAT: UILabel!
+    @IBOutlet weak var thirdAT: UILabel!
+    @IBOutlet weak var fourthAT: UILabel!
+    @IBOutlet weak var fifthAT: UILabel!
+    @IBOutlet weak var sixthAT: UILabel!
+    @IBOutlet weak var seventhAT: UILabel!
+    
+    
     
     override func viewDidLoad()
     {
