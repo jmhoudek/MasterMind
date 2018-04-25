@@ -1667,7 +1667,6 @@
         <image name="leaderboard.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4xR-gT-fq2"/>
         <segue reference="Czi-28-Z0N"/>
     </inferredMetricsTieBreakers>
 </document>
