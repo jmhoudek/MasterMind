@@ -95,22 +95,24 @@ class App: NSObject, Codable
     {
         var sortedArray = teams
         var sortedAboveIndex = teams.count
-        while (true)
+        if(teams.count > 1)
         {
-            for i in 1..<sortedAboveIndex
+            while(true)
             {
-                if( sortedArray[i-1].avg > sortedArray[i].avg)
+                for i in 1..<sortedAboveIndex
                 {
-                    let x = sortedArray[i]
-                    sortedArray[i] = sortedArray[i-1]
-                    sortedArray[i-1] = x
-                    
+                    if( sortedArray[i-1].avg > sortedArray[i].avg)
+                    {
+                        let x = sortedArray[i]
+                        sortedArray[i] = sortedArray[i-1]
+                        sortedArray[i-1] = x
+                    }
                 }
-            }
-            sortedAboveIndex -= 1
-            if(sortedAboveIndex == 1)
-            {
-                break
+                sortedAboveIndex -= 1
+                if(sortedAboveIndex == 1)
+                {
+                    break
+                }
             }
         }
         teamSort = sortedArray
@@ -120,22 +122,24 @@ class App: NSObject, Codable
     {
         var sortedArray = teams
         var sortedAboveIndex = teams.count
-        while (true)
+        if(teams.count > 1)
         {
-            for i in 1..<sortedAboveIndex
+            while(true)
             {
-                if( sortedArray[i-1].games < sortedArray[i].games)
+                for i in 1..<sortedAboveIndex
                 {
-                    let x = sortedArray[i]
-                    sortedArray[i] = sortedArray[i-1]
-                    sortedArray[i-1] = x
-                    
+                    if( sortedArray[i-1].games < sortedArray[i].games)
+                    {
+                        let x = sortedArray[i]
+                        sortedArray[i] = sortedArray[i-1]
+                        sortedArray[i-1] = x
+                    }
                 }
-            }
-            sortedAboveIndex -= 1
-            if(sortedAboveIndex == 1)
-            {
-                break
+                sortedAboveIndex -= 1
+                if(sortedAboveIndex == 1)
+                {
+                    break
+                }
             }
         }
         teamSort = sortedArray

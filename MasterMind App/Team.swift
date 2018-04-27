@@ -29,6 +29,7 @@ class Team: NSObject, Codable
     {
         games = games + 1
         var newAvg = (avg * Double(games - 1) + Double(newScore)) / Double(games)
+        newAvg = Double(Int(newAvg * 100)) / 100.0
         avg = newAvg
     }
     

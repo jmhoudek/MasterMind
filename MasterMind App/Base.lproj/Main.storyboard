@@ -915,6 +915,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="AvgScoreSort:" destination="3fH-II-tz1" eventType="touchUpInside" id="prQ-tu-aFc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DaV-gL-aF3">
                                 <rect key="frame" x="623" y="633" width="187" height="66"/>
@@ -1187,6 +1190,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gamesPlayedSort:" destination="3fH-II-tz1" eventType="touchUpInside" id="tAY-xm-Ec9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1205,6 +1211,13 @@
                         <outlet property="fourthAS" destination="jan-BT-3UU" id="Ro3-aR-qBm"/>
                         <outlet property="fourthAT" destination="2Dw-Gm-X9h" id="agQ-iu-TYH"/>
                         <outlet property="fourthGP" destination="d9K-p5-rqU" id="qvk-0A-c1K"/>
+                        <outlet property="labelFive" destination="hWH-dT-SeR" id="xyo-ZD-89W"/>
+                        <outlet property="labelFour" destination="SuX-5I-BYp" id="vP1-6l-3wK"/>
+                        <outlet property="labelOne" destination="6Q8-eN-kFS" id="Fih-dJ-0SJ"/>
+                        <outlet property="labelSeven" destination="Qjb-bO-MIM" id="NOc-ao-Lb5"/>
+                        <outlet property="labelSix" destination="Rs9-LZ-fuc" id="XxJ-EM-qKz"/>
+                        <outlet property="labelThree" destination="b4p-d4-jPa" id="ehe-RI-dCa"/>
+                        <outlet property="labelTwo" destination="K6h-zl-15K" id="7xO-dc-c1Y"/>
                         <outlet property="second" destination="Z8I-fl-wyB" id="ctf-0N-x7r"/>
                         <outlet property="secondAS" destination="EqK-QT-4gn" id="RJN-1I-yv3"/>
                         <outlet property="secondAT" destination="5OJ-xh-ijz" id="BdR-Ri-9fd"/>
@@ -1236,7 +1249,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="719"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-Gd-oVd">
@@ -1679,7 +1692,6 @@
         <image name="leaderboard.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4xR-gT-fq2"/>
-        <segue reference="Czi-28-Z0N"/>
+        <segue reference="Pg7-sl-b9u"/>
     </inferredMetricsTieBreakers>
 </document>
