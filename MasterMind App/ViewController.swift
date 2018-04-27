@@ -158,7 +158,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
             }
         }
-        if( pickerView == discardPicker )
+        else if( pickerView == discardPicker )
         {
             if( row > 0 )
             {
