@@ -515,7 +515,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="discardTeam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YtG-uD-wpE"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Czi-28-Z0N"/>
+                                    <segue destination="UqW-fU-iom" kind="show" id="7tg-zg-fYM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am7-4B-DTj">
@@ -1680,7 +1680,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaj-SO-mDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="140"/>
+            <point key="canvasLocation" x="-669" y="140"/>
         </scene>
     </scenes>
     <resources>
@@ -1691,7 +1691,4 @@
         <image name="home.png" width="25" height="25"/>
         <image name="leaderboard.png" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Pg7-sl-b9u"/>
-    </inferredMetricsTieBreakers>
 </document>
