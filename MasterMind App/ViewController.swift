@@ -57,7 +57,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var toBeDiscarded = ""
     
-    var gameAmount = 0
+    var gameAmount = 40
     
     @IBAction func createTeam(_ sender: Any)
     {
@@ -78,6 +78,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             selectTeam.dataSource = self
             discardPicker.delegate = self
             discardPicker.dataSource = self
+        }
+        else
+        {
+            newTeamText.text = ""
         }
     }
     
@@ -151,7 +155,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             if( row > 0 )
             {
-                gameAmount = Int(amount[row])!
+                
             }
         }
         if( pickerView == discardPicker )
