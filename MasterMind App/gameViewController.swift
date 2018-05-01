@@ -395,7 +395,14 @@ class gameViewController: UIViewController
         }
         else if(didLose)
         {
+            let alert = UIAlertController(title: "Oh No..", message: "You didnt finish within 8 guesses.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "To the trash", style: UIAlertActionStyle.default, handler:{ (action) in
+                master.discardTeam(str: currentPlayer)
+                self.performSegue(withIdentifier: "toHome", sender: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
             
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
