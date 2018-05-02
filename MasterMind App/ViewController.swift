@@ -33,6 +33,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         discardPicker.dataSource = self
         
         newTeamText.delegate = self
+        
+        maxGamesText.text = String(gameAmount)
     }
     override func didReceiveMemoryWarning()
     {
@@ -41,6 +43,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!
+    @IBOutlet weak var maxGamesText: UITextField!
     
     @IBOutlet weak var newTeamText: UITextField!
     @IBOutlet weak var avgScoreText: UILabel!
@@ -49,9 +52,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let amount = ["Select Amount:", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
     
     var toBeDiscarded = ""
-    
+
     var gameAmount = 40
     
+    @IBAction func changeMaxGames(_ sender: Any)
+    {
+        gameAmount = Int(maxGamesText.text!)!
+    }
     @IBAction func createTeam(_ sender: Any)
     {
         if( teamNames.count < 7)

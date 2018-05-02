@@ -161,7 +161,7 @@ class App: NSObject, Codable
     func checkHallOfFame(team: Team)
     {
         var copy = hallOfFame
-        if(team.games > 0)
+        if(team.games > 20)
         {
             let x = hallOfFame.count
             
