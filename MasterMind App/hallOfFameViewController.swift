@@ -57,11 +57,22 @@ class hallOfFameViewController: UIViewController
     override func viewDidAppear(_ animated: Bool)
     {
         clearLabels()
+        updateLabels()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func updateLabels()
+    {
         if(master.hallOfFame.count > 0)
         {
             labelOne.isHidden = false
             firstAS.text = String(master.hallOfFame[0].avg)
             first.text = master.hallOfFame[0].name
+            print(master.hallOfFame[0].name)
         }
         if(master.hallOfFame.count > 1)
         {
@@ -88,12 +99,6 @@ class hallOfFameViewController: UIViewController
             fifth.text = master.hallOfFame[4].name
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     /*
      // MARK: - Navigation
