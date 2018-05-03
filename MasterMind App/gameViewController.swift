@@ -60,9 +60,12 @@ class gameViewController: UIViewController
     @IBOutlet weak var zero: UIButton!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var enter: UIButton!
+    @IBOutlet weak var back: UIButton!
+    
     
     
     var shouldEnd = false
+    var didLose = false
     
     var digiOne = 0
     var digiTwo = 0
@@ -86,6 +89,7 @@ class gameViewController: UIViewController
         zero.isEnabled = true
         delete.isEnabled = true
         enter.isEnabled = true
+        back.isEnabled = false
     }
 
     override func didReceiveMemoryWarning()
@@ -354,7 +358,7 @@ class gameViewController: UIViewController
     
     func isDone()
     {
-        if(shouldEnd || attempts == 8)
+        if(shouldEnd)
         {
             shouldEnd = false
             one.isEnabled = false
@@ -380,6 +384,25 @@ class gameViewController: UIViewController
                 }
                 index += 1
             }
+            
+            let alert = UIAlertController(title: "Congradulations!", message: "You finished in " + String(attempts) + " attemps.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{ (action) in
+                self.performSegue(withIdentifier: "toHome", sender: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(didLose)
+        {
+            let alert = UIAlertController(title: "Oh No..", message: "You didnt finish within 8 guesses.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "To the trash", style: UIAlertActionStyle.default, handler:{ (action) in
+                master.discardTeam(str: currentPlayer)
+                self.performSegue(withIdentifier: "toHome", sender: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -512,6 +535,10 @@ class gameViewController: UIViewController
             if(dots8.text == "⚫️ ⚫️ ⚫️ ")
             {
                 shouldEnd = true
+            }
+            else
+            {
+                didLose = true
             }
         }
     }

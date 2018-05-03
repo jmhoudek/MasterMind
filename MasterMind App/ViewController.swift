@@ -30,8 +30,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
-        maxGames.delegate = self
-        maxGames.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -40,10 +38,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
-        maxGames.delegate = self
-        maxGames.dataSource = self
         
         newTeamText.delegate = self
+        
+        maxGamesText.text = String(gameAmount)
     }
     override func didReceiveMemoryWarning()
     {
@@ -52,9 +50,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!
-    @IBOutlet weak var maxGames: UIPickerView!
-    
-    
+    @IBOutlet weak var maxGamesText: UITextField!
     
     @IBOutlet weak var newTeamText: UITextField!
     @IBOutlet weak var avgScoreText: UILabel!
@@ -63,9 +59,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let amount = ["Select Amount:", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
     
     var toBeDiscarded = ""
-    
+
     var gameAmount = 40
     
+    @IBAction func changeMaxGames(_ sender: Any)
+    {
+        gameAmount = Int(maxGamesText.text!)!
+    }
     @IBAction func createTeam(_ sender: Any)
     {
         if( teamNames.count < 7)
@@ -112,11 +112,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        if( pickerView == maxGames)
-        {
-            return amount[row]
-        }
-        else if ( pickerView == discardPicker )
+        if ( pickerView == discardPicker )
         {
             if( row == 0 )
             {
@@ -142,11 +138,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        if( pickerView == maxGames )
-        {
-            return amount.count
-        }
-        else if ( pickerView == discardPicker )
+        if ( pickerView == discardPicker )
         {
             return teamNames.count + 1
         }
@@ -158,13 +150,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        if( pickerView == maxGames )
-        {
-            if( row > 0 )
-            {
-                
-            }
-        }
         if( pickerView == discardPicker )
         {
             if( row > 0 )
