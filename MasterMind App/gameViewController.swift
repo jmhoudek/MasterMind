@@ -387,7 +387,7 @@ class gameViewController: UIViewController
                 index += 1
             }
             
-            let alert = UIAlertController(title: "Congratulations!", message: "You finished in " + String(attempts) + " attemps.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Congratulations!", message: "You finished in " + String(attempts) + " attempts.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{ (action) in
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
@@ -471,7 +471,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots1.text = dotString
-            if(dots1.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots1.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -480,7 +480,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots2.text = dotString
-            if(dots2.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots2.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -489,7 +489,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots3.text = dotString
-            if(dots3.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots3.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -498,7 +498,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots4.text = dotString
-            if(dots4.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots4.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -507,7 +507,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots5.text = dotString
-            if(dots5.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots5.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -516,7 +516,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots6.text = dotString
-            if(dots6.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots6.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -525,7 +525,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots7.text = dotString
-            if(dots7.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots7.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
@@ -534,7 +534,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots8.text = dotString
-            if(dots8.text == "⚫️ ⚫️ ⚫️ ")
+            if(dots8.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
             }
