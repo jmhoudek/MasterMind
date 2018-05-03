@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 import os.log
+var keepHere2 = ""
+
 
 class App: NSObject, Codable
 {
@@ -22,12 +24,16 @@ class App: NSObject, Codable
         teams = []
         teamSort = []
         hallOfFame = []
+        
+        
     }
     
     func addTeam(str: String)
     {
         teams.append(Team(tname: str))
         teamSort.append(Team(tname: str))
+        archive(fileName: keepHere2)
+        
     }
     
     func discardTeam(str: String)
@@ -64,6 +70,7 @@ class App: NSObject, Codable
             }
             index3 += 1
         }
+        archive(fileName: keepHere2)
     }
     
     func hofSort()
@@ -89,6 +96,7 @@ class App: NSObject, Codable
             }
         }
         hallOfFame = sortedArray
+        archive(fileName: keepHere2)
     }
     
     func avgSort()

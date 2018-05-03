@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		23198555202B6E1F00B32B2F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198554202B6E1F00B32B2F /* Game.swift */; };
-		2332317E2005329F007BE9F5 /* optionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332317D2005329F007BE9F5 /* optionsViewController.swift */; };
 		23631CD21FDEFAA100FE27BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23631CD11FDEFAA100FE27BA /* AppDelegate.swift */; };
 		23631CD41FDEFAA100FE27BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23631CD31FDEFAA100FE27BA /* ViewController.swift */; };
 		23631CD71FDEFAA100FE27BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23631CD51FDEFAA100FE27BA /* Main.storyboard */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		23198554202B6E1F00B32B2F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		2332317D2005329F007BE9F5 /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
 		23631CCE1FDEFAA100FE27BA /* MasterMind App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MasterMind App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23631CD11FDEFAA100FE27BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23631CD31FDEFAA100FE27BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				23631CD31FDEFAA100FE27BA /* ViewController.swift */,
 				68D15C561FEC29D20013FE91 /* rulesViewController.swift */,
 				23D67DBC2058357A00D7F007 /* gameViewController.swift */,
-				2332317D2005329F007BE9F5 /* optionsViewController.swift */,
 				23962767202A1E9500FAD2C0 /* standingsViewController.swift */,
 				68D15C5C1FEC2B080013FE91 /* hallOfFameViewController.swift */,
 				23631CD51FDEFAA100FE27BA /* Main.storyboard */,
@@ -299,7 +296,6 @@
 				2385CE272028CD3F0011BD8F /* App.swift in Sources */,
 				23631CD21FDEFAA100FE27BA /* AppDelegate.swift in Sources */,
 				23D67DBD2058357A00D7F007 /* gameViewController.swift in Sources */,
-				2332317E2005329F007BE9F5 /* optionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
