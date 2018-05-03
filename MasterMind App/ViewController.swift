@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
+        startButton.isEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -40,6 +41,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!
@@ -63,8 +67,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     {
         if( teamNames.count < 7)
         {
-            if(newTeamText.isEqual(""))
+            if((newTeamText.text?.isEqual(""))! || (newTeamText.text?.isEqual(" "))! || (newTeamText.text?.isEqual("  "))! || (newTeamText.text?.isEqual("   "))!)
             {
+                let alert = UIAlertController(title: "Stop!", message: "Enter a valid team name first", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             else
@@ -82,6 +92,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else
         {
             newTeamText.text = ""
+            let alert = UIAlertController(title: "Stop!", message: "You cannot create more than 7 teams", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -154,6 +170,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             if( row > 0 )
             {
+                startButton.isEnabled = true
                 currentPlayer = teamNames[row - 1]
                 var index = 0
                 for x in master.teams
@@ -169,8 +186,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             else
             {
+                startButton.isEnabled = false
                 avgScoreText.text = ""
                 gamesPlayedText.text = ""
+                currentPlayer = ""
             }
         }
     }

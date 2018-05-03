@@ -528,13 +528,20 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-Dg-2A6">
-                                <rect key="frame" x="206" y="80" width="179" height="77"/>
+                                <rect key="frame" x="206" y="104" width="179" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="60"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bci-zK-JZR">
+                                <rect key="frame" x="20" y="12" width="984" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9370916485786438" green="0.93694382905960083" blue="0.95754462480545044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -584,6 +591,7 @@
                         <outlet property="one" destination="Jvp-Bd-5Oz" id="Vzf-xe-ExZ"/>
                         <outlet property="seven" destination="x3a-jI-KdQ" id="1wh-9e-Uqu"/>
                         <outlet property="six" destination="YNn-8U-0pm" id="CEf-1b-eM6"/>
+                        <outlet property="teamPlaying" destination="bci-zK-JZR" id="1xm-3y-x2P"/>
                         <outlet property="three" destination="hbt-o8-MeB" id="dJi-O5-d5W"/>
                         <outlet property="two" destination="Zv7-sh-Kqx" id="Fnc-Bl-eEE"/>
                         <outlet property="zero" destination="F6z-so-Nu6" id="Hrh-UX-T7h"/>
@@ -1470,6 +1478,7 @@
                         <outlet property="maxGamesText" destination="OEA-Eg-Uvx" id="EwT-qj-cXh"/>
                         <outlet property="newTeamText" destination="w7B-qk-RQ9" id="Qrj-hz-mdU"/>
                         <outlet property="selectTeam" destination="Tyr-Iz-v6b" id="CNT-Vv-bpN"/>
+                        <outlet property="startButton" destination="KF5-IV-jOp" id="M4e-EF-Og7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
