@@ -63,6 +63,7 @@ class gameViewController: UIViewController
     @IBOutlet weak var back: UIButton!
     
     
+    @IBOutlet weak var teamPlaying: UILabel!
     
     var shouldEnd = false
     var didLose = false
@@ -76,6 +77,7 @@ class gameViewController: UIViewController
     {
         super.viewDidLoad()
         startGame()
+        teamPlaying.text = currentPlayer
         attempts = 0
         one.isEnabled = true
         two.isEnabled = true
@@ -385,7 +387,7 @@ class gameViewController: UIViewController
                 index += 1
             }
             
-            let alert = UIAlertController(title: "Congradulations!", message: "You finished in " + String(attempts) + " attemps.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Congratulations!", message: "You finished in " + String(attempts) + " attemps.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{ (action) in
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
@@ -395,7 +397,7 @@ class gameViewController: UIViewController
         }
         else if(didLose)
         {
-            let alert = UIAlertController(title: "Oh No..", message: "You didnt finish within 8 guesses.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Oh No..", message: "You didn't finish within 8 guesses.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "To the trash", style: UIAlertActionStyle.default, handler:{ (action) in
                 master.discardTeam(str: currentPlayer)
                 self.performSegue(withIdentifier: "toHome", sender: nil)
