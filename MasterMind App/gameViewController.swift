@@ -62,6 +62,7 @@ class gameViewController: UIViewController
     @IBOutlet weak var enter: UIButton!
     @IBOutlet weak var back: UIButton!
     
+    var singleOpenCount = 0
     
     @IBOutlet weak var teamPlaying: UILabel!
     
@@ -92,6 +93,7 @@ class gameViewController: UIViewController
         delete.isEnabled = true
         enter.isEnabled = true
         back.isEnabled = false
+        singleOpenCount = 0
     }
 
     override func didReceiveMemoryWarning()
@@ -376,19 +378,18 @@ class gameViewController: UIViewController
             delete.isEnabled = false
             enter.isEnabled = false
             
-            var index = 0
-            for x in master.teams
-            {
-                if (currentPlayer.isEqual(x.name))
-                {
-                    master.teams[index].update(newScore: Double(attempts))
-                    break
-                }
-                index += 1
-            }
-            
-            let alert = UIAlertController(title: "Congratulations!", message: "You finished in " + String(attempts) + " attempts.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Congratulations!", message: "You finished in " + String(attempts) + " attempts", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{ (action) in
+                var index = 0
+                for x in master.teams
+                {
+                    if (currentPlayer.isEqual(x.name))
+                    {
+                        master.teams[index].update(newScore: Double(attempts))
+                        break
+                    }
+                    index += 1
+                }
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))
@@ -397,9 +398,49 @@ class gameViewController: UIViewController
         }
         else if(didLose)
         {
-            let alert = UIAlertController(title: "Oh No..", message: "You didn't finish within 8 guesses.", preferredStyle: UIAlertControllerStyle.alert)
+            one.isEnabled = false
+            two.isEnabled = false
+            three.isEnabled = false
+            four.isEnabled = false
+            five.isEnabled = false
+            six.isEnabled = false
+            seven.isEnabled = false
+            eight.isEnabled = false
+            nine.isEnabled = false
+            zero.isEnabled = false
+            delete.isEnabled = false
+            enter.isEnabled = false
+            
+            let alert = UIAlertController(title: "Oh No..", message: "You didn't finish within 8 guesses", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "To the trash", style: UIAlertActionStyle.default, handler:{ (action) in
                 master.discardTeam(str: currentPlayer)
+                self.performSegue(withIdentifier: "toHome", sender: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Discard Attempt", style: UIAlertActionStyle.default, handler:{ (action) in
+                self.performSegue(withIdentifier: "toHome", sender: nil)
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if(singleOpenCount == 4)
+        {
+            one.isEnabled = false
+            two.isEnabled = false
+            three.isEnabled = false
+            four.isEnabled = false
+            five.isEnabled = false
+            six.isEnabled = false
+            seven.isEnabled = false
+            eight.isEnabled = false
+            nine.isEnabled = false
+            zero.isEnabled = false
+            delete.isEnabled = false
+            enter.isEnabled = false
+            
+            let alert = UIAlertController(title: "Wow!", message: "It's your luckiest unlucky day", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Restart", style: UIAlertActionStyle.default, handler:{ (action) in
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))
@@ -471,6 +512,10 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots1.text = dotString
+            if(dots1.text == "⭕ ")
+            {
+                singleOpenCount += 1
+            }
             if(dots1.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -480,6 +525,10 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots2.text = dotString
+            if(dots2.text == "⭕ ")
+            {
+                singleOpenCount += 1
+            }
             if(dots2.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -489,6 +538,10 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots3.text = dotString
+            if(dots3.text == "⭕ ")
+            {
+                singleOpenCount += 1
+            }
             if(dots3.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -498,6 +551,10 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots4.text = dotString
+            if(dots4.text == "⭕ ")
+            {
+                singleOpenCount += 1
+            }
             if(dots4.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -507,6 +564,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots5.text = dotString
+            singleOpenCount = 0
             if(dots5.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -516,6 +574,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots6.text = dotString
+            singleOpenCount = 0
             if(dots6.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -525,6 +584,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots7.text = dotString
+            singleOpenCount = 0
             if(dots7.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
@@ -534,6 +594,7 @@ class gameViewController: UIViewController
         {
             let dotString = newGame.calculate(digit1: digiOne, digit2: digiTwo, digit3: digiThree)
             dots8.text = dotString
+            singleOpenCount = 0
             if(dots8.text == "🔴 🔴 🔴 ")
             {
                 shouldEnd = true
