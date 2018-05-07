@@ -19,8 +19,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        restore(fileName: keepHere)
-        teams.restore(fileName: keepHere2)
     }
     
     override func viewDidLoad()
