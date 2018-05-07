@@ -11,7 +11,6 @@ import UIKit
 var master = App()
 var newGame = Game()
 var teamNames = [String]()
-var attempts = 0
 var currentPlayer = ""
 var gameAmount = 40
 
@@ -38,6 +37,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         startButton.isEnabled = false
         newTeamText.delegate = self
         maxGamesText.text = String(gameAmount)
+        self.selectTeam.selectRow(0, inComponent: 0, animated: false)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: false)
     }
     override func didReceiveMemoryWarning()
     {
