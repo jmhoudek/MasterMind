@@ -67,13 +67,13 @@ class Game: NSObject
         
         while (0 < x)
         {
-            output += blackDot()
+            output += filledDot()
             x -= 1
         }
         
         while(0 < y)
         {
-            output += whiteDot()
+            output += openDot()
             y -= 1
         }
         numberOfGuesses += 1
@@ -121,15 +121,15 @@ class Game: NSObject
     }
     
     //function that prints the black dots
-    func blackDot() -> String
+    func filledDot() -> String
     {
-        return("⚫️ ")
+        return("🔴 ")
     }
     
     //function that prints white dots
-    func whiteDot() -> String
+    func openDot() -> String
     {
-        return("⚪️ ")
+        return("⭕ ")
     }
 
 }

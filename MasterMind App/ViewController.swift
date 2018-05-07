@@ -11,8 +11,8 @@ import UIKit
 var master = App()
 var newGame = Game()
 var teamNames = [String]()
-var attempts = 0
 var currentPlayer = ""
+var gameAmount = 40
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
 {
@@ -28,6 +28,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
+        startButton.isEnabled = false
+        newTeamText.delegate = self
+        maxGamesText.text = String(gameAmount)
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -36,15 +39,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectTeam.dataSource = self
         discardPicker.delegate = self
         discardPicker.dataSource = self
-        
+        startButton.isEnabled = false
         newTeamText.delegate = self
-        
         maxGamesText.text = String(gameAmount)
+        self.selectTeam.selectRow(0, inComponent: 0, animated: false)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: false)
     }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var toGame: UIButton!
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!
@@ -57,19 +65,39 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let amount = ["Select Amount:", "20", "25", "30", "35", "40", "45", "50", "55", "60"]
     
     var toBeDiscarded = ""
-
-    var gameAmount = 40
     
     @IBAction func changeMaxGames(_ sender: Any)
     {
-        gameAmount = Int(maxGamesText.text!)!
+        let num = Int(maxGamesText.text!)
+        
+        if (num != nil)
+        {
+            gameAmount = Int(maxGamesText.text!)!
+            self.view.endEditing(true)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Stop!", message: "Please enter a number", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+    
     @IBAction func createTeam(_ sender: Any)
     {
         if( teamNames.count < 7)
         {
-            if(newTeamText.isEqual(""))
+            if((newTeamText.text?.isEqual(""))! || (newTeamText.text?.isEqual(" "))! || (newTeamText.text?.isEqual("  "))! || (newTeamText.text?.isEqual("   "))!)
             {
+                let alert = UIAlertController(title: "Stop!", message: "Enter a team name", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             else
@@ -87,7 +115,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else
         {
             newTeamText.text = ""
+            let alert = UIAlertController(title: "Stop!", message: "You cannot create more than 7 teams", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
+        self.view.endEditing(true)
     }
     
     @IBAction func discardTeam(_ sender: Any)
@@ -102,6 +137,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         avgScoreText.text = ""
         gamesPlayedText.text = ""
     }
+    
+    @IBAction func gameStart(_ sender: Any)
+    {
+        if(Int(gamesPlayedText.text!)! < gameAmount)
+        {
+            self.performSegue(withIdentifier: "toGame", sender: nil)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Sorry", message: "You have already played the max amount of games!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -159,6 +212,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             if( row > 0 )
             {
+                startButton.isEnabled = true
                 currentPlayer = teamNames[row - 1]
                 var index = 0
                 for x in master.teams
@@ -174,8 +228,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             else
             {
+                startButton.isEnabled = false
                 avgScoreText.text = ""
                 gamesPlayedText.text = ""
+                currentPlayer = ""
             }
         }
     }
