@@ -60,7 +60,6 @@ class gameViewController: UIViewController
     @IBOutlet weak var zero: UIButton!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var enter: UIButton!
-    @IBOutlet weak var back: UIButton!
     
     var singleOpenCount = 0
     var attempts = 0
@@ -93,7 +92,6 @@ class gameViewController: UIViewController
         zero.isEnabled = true
         delete.isEnabled = true
         enter.isEnabled = true
-        back.isEnabled = false
         singleOpenCount = 0
     }
 

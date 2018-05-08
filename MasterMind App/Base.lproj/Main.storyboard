@@ -576,7 +576,7 @@
                         <outlet property="three" destination="hbt-o8-MeB" id="dJi-O5-d5W"/>
                         <outlet property="two" destination="Zv7-sh-Kqx" id="Fnc-Bl-eEE"/>
                         <outlet property="zero" destination="F6z-so-Nu6" id="Hrh-UX-T7h"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="TGR-NW-A3b"/>
+                        <segue destination="UqW-fU-iom" kind="show" identifier="toHome" id="zCI-c1-eDF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8T-YK-pPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -609,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqs-8L-OkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116.01562499999999" y="-833.59375"/>
+            <point key="canvasLocation" x="991" y="15"/>
         </scene>
         <!--Team Standings-->
         <scene sceneID="3xV-kP-Z30">
@@ -1004,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpa-UE-hVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1354.1015625" y="139.84375"/>
+            <point key="canvasLocation" x="-353" y="15"/>
         </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
@@ -1015,7 +1015,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="719"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-Gd-oVd">
@@ -1256,6 +1256,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home.png" landscapeImage="home.png" id="OZw-Ui-354">
                         <color key="badgeColor" red="0.35050058360000003" green="0.78535181279999999" blue="0.98559325929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="er1-ko-gm9"/>
                     <connections>
                         <outlet property="avgScoreText" destination="2VF-pn-nfs" id="khc-S9-OTZ"/>
                         <outlet property="discardPicker" destination="RTW-fc-qao" id="LPk-gj-1cv"/>
@@ -1269,7 +1270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.203125" y="139.84375"/>
+            <point key="canvasLocation" x="-1037" y="15"/>
         </scene>
         <!--Hall of Fame-->
         <scene sceneID="UKp-2e-9VV">
@@ -1462,7 +1463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yee-ce-SfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250.19531249999997" y="894.53125"/>
+            <point key="canvasLocation" x="308" y="15"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fPK-dd-sku">
@@ -1479,15 +1480,15 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Pg7-sl-b9u"/>
-                        <segue destination="fHU-lP-MqY" kind="relationship" relationship="viewControllers" id="7cl-a3-76E"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="57b-dV-y6T"/>
                         <segue destination="3fH-II-tz1" kind="relationship" relationship="viewControllers" id="M43-Sz-6OG"/>
+                        <segue destination="fHU-lP-MqY" kind="relationship" relationship="viewControllers" id="7cl-a3-76E"/>
                         <segue destination="P4j-vI-Qbs" kind="relationship" relationship="viewControllers" id="ftb-tr-HfA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaj-SO-mDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-669" y="140"/>
+            <point key="canvasLocation" x="-1" y="755"/>
         </scene>
     </scenes>
     <resources>
@@ -1498,7 +1499,4 @@
         <image name="home.png" width="25" height="25"/>
         <image name="leaderboard.png" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="TGR-NW-A3b"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -26,6 +26,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         startButton.isEnabled = false
         newTeamText.delegate = self
         maxGamesText.text = String(gameAmount)
+        self.selectTeam.selectRow(0, inComponent: 0, animated: false)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: false)
+        gamesPlayedText.text = ""
+        avgScoreText.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -39,7 +43,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         maxGamesText.text = String(gameAmount)
         self.selectTeam.selectRow(0, inComponent: 0, animated: false)
         self.discardPicker.selectRow(0, inComponent: 0, animated: false)
+        gamesPlayedText.text = ""
+        avgScoreText.text = ""
     }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -47,7 +54,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var toGame: UIButton!
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!
