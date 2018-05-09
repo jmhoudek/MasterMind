@@ -820,7 +820,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mastermind Rules" image="Rules.png" landscapeImage="Rules.png" id="DzS-aG-gap"/>
+                    <tabBarItem key="tabBarItem" title="Mastermind Rules" image="Image-3" landscapeImage="Image-3" selectedImage="Image-3" id="DzS-aG-gap"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqs-8L-OkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1178,7 +1178,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Team Standings" image="leaderboard.png" landscapeImage="leaderboard.png" selectedImage="leaderboard.png" id="qMw-RJ-Vl8"/>
+                    <tabBarItem key="tabBarItem" title="Team Standings" image="Image-2" landscapeImage="Image-2" selectedImage="Image-2" id="qMw-RJ-Vl8"/>
                     <connections>
                         <outlet property="fifth" destination="EdA-PB-TE0" id="BzL-f5-zuL"/>
                         <outlet property="fifthAS" destination="FNO-Uz-1ts" id="8cD-2c-1PI"/>
@@ -1475,7 +1475,7 @@
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <edgeInsets key="layoutMargins" top="12" left="8" bottom="0.0" right="8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home.png" landscapeImage="home.png" id="OZw-Ui-354">
+                    <tabBarItem key="tabBarItem" title="Home" image="Image-1" landscapeImage="Image-1" selectedImage="Image-1" id="OZw-Ui-354">
                         <color key="badgeColor" red="0.35050058360000003" green="0.78535181279999999" blue="0.98559325929999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
@@ -1662,7 +1662,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94110500809999997" green="0.93685287240000004" blue="0.96157747510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hall of Fame" image="HallofFame.png" landscapeImage="HallofFame.png" id="6tY-eH-WbW"/>
+                    <tabBarItem key="tabBarItem" title="Hall of Fame" image="Image" landscapeImage="Image" selectedImage="Image" id="6tY-eH-WbW"/>
                     <connections>
                         <outlet property="fifth" destination="5VD-Ej-0Ur" id="aPP-QI-BnR"/>
                         <outlet property="fifthAS" destination="XkX-9z-bGR" id="1Wd-pO-alY"/>
@@ -1713,11 +1713,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HallofFame.png" width="25" height="25"/>
+        <image name="Image" width="25" height="25"/>
+        <image name="Image-1" width="25" height="25"/>
+        <image name="Image-2" width="25" height="25"/>
+        <image name="Image-3" width="25" height="25"/>
         <image name="Image1" width="366" height="634"/>
         <image name="Image2" width="731" height="496"/>
-        <image name="Rules.png" width="25" height="25"/>
-        <image name="home.png" width="25" height="25"/>
-        <image name="leaderboard.png" width="25" height="25"/>
     </resources>
 </document>
