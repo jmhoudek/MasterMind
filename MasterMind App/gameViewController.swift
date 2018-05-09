@@ -78,6 +78,9 @@ class gameViewController: UIViewController
     {
         super.viewDidLoad()
         startGame()
+        startTimer()
+        timerCount = 0
+        tenCount = 0
         teamPlaying.text = currentPlayer
         attempts = 0
         one.isEnabled = true
@@ -93,6 +96,7 @@ class gameViewController: UIViewController
         delete.isEnabled = true
         enter.isEnabled = true
         singleOpenCount = 0
+        counterLabel.text = "0:00"
     }
 
     override func didReceiveMemoryWarning()
@@ -100,6 +104,40 @@ class gameViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var timerCount = 0
+    var tenCount = 0
+    var timer = Timer()
+    @IBOutlet weak var counterLabel: UILabel!
+    
+    func startTimer()
+    {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer()
+    {
+        timer.invalidate()
+    }
+    
+    @objc func counter()
+    {
+        timerCount += 1
+        if (timerCount == 60)
+        {
+            timerCount = 0
+            tenCount += 1
+        }
+        if (timerCount < 10)
+        {
+            counterLabel.text = String(tenCount) + ":0" + String(timerCount)
+        }
+        else
+        {
+            counterLabel.text = String(tenCount) + ":" + String(timerCount)
+        }
+    }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
@@ -363,6 +401,7 @@ class gameViewController: UIViewController
     {
         if(shouldEnd)
         {
+            stopTimer()
             shouldEnd = false
             one.isEnabled = false
             two.isEnabled = false
@@ -397,6 +436,7 @@ class gameViewController: UIViewController
         }
         else if(didLose)
         {
+            stopTimer()
             one.isEnabled = false
             two.isEnabled = false
             three.isEnabled = false
@@ -435,6 +475,7 @@ class gameViewController: UIViewController
         }
         else if(singleOpenCount == 4)
         {
+            stopTimer()
             one.isEnabled = false
             two.isEnabled = false
             three.isEnabled = false
