@@ -13,6 +13,7 @@ var newGame = Game()
 var teamNames = [String]()
 var currentPlayer = ""
 var gameAmount = 40
+var timerOn = true
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
 {
@@ -35,6 +36,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.discardPicker.selectRow(0, inComponent: 0, animated: false)
         gamesPlayedText.text = ""
         avgScoreText.text = ""
+        switchOn.setOn(timerOn, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -56,6 +58,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBOutlet weak var switchOn: UISwitch!
+    
+    @IBAction func timerSwitch(_ sender: Any)
+    {
+        if(timerOn)
+        {
+            timerOn = false
+        }
+        else
+        {
+            timerOn = true
+        }
+    }
+    
     
     
     @IBOutlet weak var startButton: UIButton!

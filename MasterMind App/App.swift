@@ -155,7 +155,29 @@ class App: NSObject, Codable
     
     func timeSort()
     {
-        
+        var sortedArray = teams
+        var sortedAboveIndex = teams.count
+        if(teams.count > 1)
+        {
+            while(true)
+            {
+                for i in 1..<sortedAboveIndex
+                {
+                    if( sortedArray[i-1].avgTime > sortedArray[i].avgTime)
+                    {
+                        let x = sortedArray[i]
+                        sortedArray[i] = sortedArray[i-1]
+                        sortedArray[i-1] = x
+                    }
+                }
+                sortedAboveIndex -= 1
+                if(sortedAboveIndex == 1)
+                {
+                    break
+                }
+            }
+        }
+        teamSort = sortedArray
     }
     
     func printArray(arr: Array<Team>)

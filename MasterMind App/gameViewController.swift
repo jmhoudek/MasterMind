@@ -63,6 +63,8 @@ class gameViewController: UIViewController
     
     var singleOpenCount = 0
     var attempts = 0
+    var tens = 0
+    var ones = 0
     
     @IBOutlet weak var teamPlaying: UILabel!
     
@@ -97,6 +99,14 @@ class gameViewController: UIViewController
         enter.isEnabled = true
         singleOpenCount = 0
         counterLabel.text = "0:00"
+        if(timerOn)
+        {
+            counterLabel.isHidden = false
+        }
+        else
+        {
+            counterLabel.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning()
@@ -118,6 +128,8 @@ class gameViewController: UIViewController
     func stopTimer()
     {
         timer.invalidate()
+        tens = tenCount
+        ones = timerCount
     }
     
     @objc func counter()
@@ -423,7 +435,8 @@ class gameViewController: UIViewController
                 {
                     if (currentPlayer.isEqual(x.name))
                     {
-                        master.teams[index].update(newScore: Double(self.attempts))
+                        let totalTime = ((self.tens*60) + self.ones)
+                        master.teams[index].update(newScore: Double(self.attempts), newTime: totalTime)
                         break
                     }
                     index += 1
@@ -457,7 +470,7 @@ class gameViewController: UIViewController
                 {
                     if (currentPlayer.isEqual(x.name))
                     {
-                        master.teams[index].update(newScore: 1000.0)
+                        master.teams[index].update(newScore: 1000.0, newTime: 1000)
                         break
                     }
                     index += 1

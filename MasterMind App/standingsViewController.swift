@@ -95,6 +95,13 @@ class standingsViewController: UIViewController
         fifthAS.text = ""
         sixthAS.text = ""
         seventhAS.text = ""
+        firstAT.text = ""
+        secondAT.text = ""
+        thirdAT.text = ""
+        fourthAT.text = ""
+        fifthAT.text = ""
+        sixthAT.text = ""
+        seventhAT.text = ""
     }
     
     func updateLables()
@@ -105,6 +112,18 @@ class standingsViewController: UIViewController
             first.text = master.teamSort[0].name
             firstGP.text = String(master.teamSort[0].games)
             firstAS.text = String(master.teamSort[0].avg)
+            let teamTime = master.teamSort[0].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                firstAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                firstAT.text = String(tens) + ":" + String(ones)
+            }
+            
         }
         if(master.teamSort.count > 1)
         {
@@ -112,6 +131,17 @@ class standingsViewController: UIViewController
             second.text = master.teamSort[1].name
             secondGP.text = String(master.teamSort[1].games)
             secondAS.text = String(master.teamSort[1].avg)
+            let teamTime = master.teamSort[1].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                secondAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                secondAT.text = String(tens) + ":" + String(ones)
+            }
         }
         if(master.teamSort.count > 2)
         {
@@ -119,6 +149,17 @@ class standingsViewController: UIViewController
             third.text = master.teamSort[2].name
             thirdGP.text = String(master.teamSort[2].games)
             thirdAS.text = String(master.teamSort[2].avg)
+            let teamTime = master.teamSort[2].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                thirdAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                thirdAT.text = String(tens) + ":" + String(ones)
+            }
         }
         if(master.teamSort.count > 3)
         {
@@ -126,6 +167,17 @@ class standingsViewController: UIViewController
             fourth.text = master.teamSort[3].name
             fourthGP.text = String(master.teamSort[3].games)
             fourthAS.text = String(master.teamSort[3].avg)
+            let teamTime = master.teamSort[3].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                fourthAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                fourthAT.text = String(tens) + ":" + String(ones)
+            }
         }
         if(master.teamSort.count > 4)
         {
@@ -133,6 +185,17 @@ class standingsViewController: UIViewController
             fifth.text = master.teamSort[4].name
             fifthGP.text = String(master.teamSort[4].games)
             fifthAS.text = String(master.teamSort[4].avg)
+            let teamTime = master.teamSort[4].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                fifthAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                fifthAT.text = String(tens) + ":" + String(ones)
+            }
         }
         if(master.teamSort.count > 5)
         {
@@ -140,6 +203,17 @@ class standingsViewController: UIViewController
             sixth.text = master.teamSort[5].name
             sixthGP.text = String(master.teamSort[5].games)
             sixthAS.text = String(master.teamSort[5].avg)
+            let teamTime = master.teamSort[5].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                sixthAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                sixthAT.text = String(tens) + ":" + String(ones)
+            }
         }
         if(master.teamSort.count > 6)
         {
@@ -147,6 +221,17 @@ class standingsViewController: UIViewController
             seventh.text = master.teamSort[6].name
             seventhGP.text = String(master.teamSort[6].games)
             seventhAS.text = String(master.teamSort[6].avg)
+            let teamTime = master.teamSort[6].avgTime
+            let ones = teamTime % 60
+            let tens = teamTime / 60
+            if(ones < 10)
+            {
+                seventhAT.text = String(tens) + ":0" + String(ones)
+            }
+            else
+            {
+                seventhAT.text = String(tens) + ":" + String(ones)
+            }
         }
     }
     
