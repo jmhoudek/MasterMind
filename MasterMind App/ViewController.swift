@@ -11,12 +11,16 @@ import UIKit
 var master = App()
 var newGame = Game()
 var teamNames = [String]()
-var attempts = 0
 var currentPlayer = ""
 var gameAmount = 40
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
 {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -27,6 +31,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         startButton.isEnabled = false
         newTeamText.delegate = self
         maxGamesText.text = String(gameAmount)
+        self.selectTeam.selectRow(0, inComponent: 0, animated: false)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: false)
+        gamesPlayedText.text = ""
+        avgScoreText.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -38,7 +46,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         startButton.isEnabled = false
         newTeamText.delegate = self
         maxGamesText.text = String(gameAmount)
+        self.selectTeam.selectRow(0, inComponent: 0, animated: false)
+        self.discardPicker.selectRow(0, inComponent: 0, animated: false)
+        gamesPlayedText.text = ""
+        avgScoreText.text = ""
     }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -46,7 +59,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var toGame: UIButton!
     
     @IBOutlet weak var selectTeam: UIPickerView!
     @IBOutlet weak var discardPicker: UIPickerView!

@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import os.log
+var keepHere = ""
 
 class Team: NSObject, Codable
 {
@@ -31,6 +32,7 @@ class Team: NSObject, Codable
         var newAvg = (avg * Double(games - 1) + Double(newScore)) / Double(games)
         newAvg = Double(Int(newAvg * 100 + 0.5)) / 100.0
         avg = newAvg
+        archive(fileName: keepHere)
     }
     
     func archive(fileName: String) {

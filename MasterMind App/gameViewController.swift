@@ -60,9 +60,9 @@ class gameViewController: UIViewController
     @IBOutlet weak var zero: UIButton!
     @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var enter: UIButton!
-    @IBOutlet weak var back: UIButton!
     
     var singleOpenCount = 0
+    var attempts = 0
     
     @IBOutlet weak var teamPlaying: UILabel!
     
@@ -78,6 +78,9 @@ class gameViewController: UIViewController
     {
         super.viewDidLoad()
         startGame()
+        startTimer()
+        timerCount = 0
+        tenCount = 0
         teamPlaying.text = currentPlayer
         attempts = 0
         one.isEnabled = true
@@ -92,8 +95,8 @@ class gameViewController: UIViewController
         zero.isEnabled = true
         delete.isEnabled = true
         enter.isEnabled = true
-        back.isEnabled = false
         singleOpenCount = 0
+        counterLabel.text = "0:00"
     }
 
     override func didReceiveMemoryWarning()
@@ -101,6 +104,40 @@ class gameViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var timerCount = 0
+    var tenCount = 0
+    var timer = Timer()
+    @IBOutlet weak var counterLabel: UILabel!
+    
+    func startTimer()
+    {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameViewController.counter), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer()
+    {
+        timer.invalidate()
+    }
+    
+    @objc func counter()
+    {
+        timerCount += 1
+        if (timerCount == 60)
+        {
+            timerCount = 0
+            tenCount += 1
+        }
+        if (timerCount < 10)
+        {
+            counterLabel.text = String(tenCount) + ":0" + String(timerCount)
+        }
+        else
+        {
+            counterLabel.text = String(tenCount) + ":" + String(timerCount)
+        }
+    }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
@@ -364,6 +401,7 @@ class gameViewController: UIViewController
     {
         if(shouldEnd)
         {
+            stopTimer()
             shouldEnd = false
             one.isEnabled = false
             two.isEnabled = false
@@ -385,7 +423,7 @@ class gameViewController: UIViewController
                 {
                     if (currentPlayer.isEqual(x.name))
                     {
-                        master.teams[index].update(newScore: Double(attempts))
+                        master.teams[index].update(newScore: Double(self.attempts))
                         break
                     }
                     index += 1
@@ -398,6 +436,7 @@ class gameViewController: UIViewController
         }
         else if(didLose)
         {
+            stopTimer()
             one.isEnabled = false
             two.isEnabled = false
             three.isEnabled = false
@@ -413,6 +452,16 @@ class gameViewController: UIViewController
             
             let alert = UIAlertController(title: "Oh No..", message: "You didn't finish within 8 guesses", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "To the trash", style: UIAlertActionStyle.default, handler:{ (action) in
+                var index = 0
+                for x in master.teams
+                {
+                    if (currentPlayer.isEqual(x.name))
+                    {
+                        master.teams[index].update(newScore: 1000.0)
+                        break
+                    }
+                    index += 1
+                }
                 master.discardTeam(str: currentPlayer)
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
@@ -426,6 +475,7 @@ class gameViewController: UIViewController
         }
         else if(singleOpenCount == 4)
         {
+            stopTimer()
             one.isEnabled = false
             two.isEnabled = false
             three.isEnabled = false
