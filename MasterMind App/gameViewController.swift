@@ -436,7 +436,7 @@ class gameViewController: UIViewController
                     if (currentPlayer.isEqual(x.name))
                     {
                         let totalTime = ((self.tens*60) + self.ones)
-                        master.teams[index].update(newScore: Double(self.attempts), newTime: totalTime)
+                        master.teams[index].update(newScore: Double(self.attempts), newTime: Double(totalTime))
                         break
                     }
                     index += 1
@@ -470,7 +470,7 @@ class gameViewController: UIViewController
                 {
                     if (currentPlayer.isEqual(x.name))
                     {
-                        master.teams[index].update(newScore: 1000.0, newTime: 1000)
+                        master.teams[index].update(newScore: 1000.0, newTime: 1000.0)
                         break
                     }
                     index += 1

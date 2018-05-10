@@ -15,24 +15,23 @@ class Team: NSObject, Codable
     var name: String
     var avg: Double
     var games: Int
-    var avgTime: Int
+    var avgTime: Double
     
     init( tname: String )
     {
         name = tname
         avg = 0
         games = 0
-        avgTime = 0
+        avgTime = 0.0
     }
     
-    func update( newScore: Double, newTime: Int)
+    func update( newScore: Double, newTime: Double)
     {
         games = games + 1
-        var newAvg = (avg * Double(games - 1) + Double(newScore)) / Double(games)
-        newAvg = Double(Int(newAvg * 100 + 0.5)) / 100.0
+        let newAvg = (avg * Double(games - 1) + Double(newScore)) / Double(games)
         avg = newAvg
-        var tempTime = Double((avgTime * (games - 1) + newTime)) / Double(games)
-        avgTime = Int(tempTime + 0.5)
+        let tempTime = (avgTime * Double(games - 1) + newTime) / Double(games)
+        avgTime = tempTime
     }
     
     func archive(fileName: String) {
