@@ -111,7 +111,7 @@ class standingsViewController: UIViewController
             labelOne.isHidden = false
             first.text = master.teamSort[0].name
             firstGP.text = String(master.teamSort[0].games)
-            secondAS.text = String(Double(Int(master.teamSort[0].avg * 100.0 + 0.5)) / 100.0)
+            firstAS.text = String(Double(Int(master.teamSort[0].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[0].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60
@@ -148,7 +148,7 @@ class standingsViewController: UIViewController
             labelThree.isHidden = false
             third.text = master.teamSort[2].name
             thirdGP.text = String(master.teamSort[2].games)
-            secondAS.text = String(Double(Int(master.teamSort[2].avg * 100.0 + 0.5)) / 100.0)
+            thirdAS.text = String(Double(Int(master.teamSort[2].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[2].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60
@@ -166,7 +166,7 @@ class standingsViewController: UIViewController
             labelFour.isHidden = false
             fourth.text = master.teamSort[3].name
             fourthGP.text = String(master.teamSort[3].games)
-            secondAS.text = String(Double(Int(master.teamSort[3].avg * 100.0 + 0.5)) / 100.0)
+            fourthAS.text = String(Double(Int(master.teamSort[3].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[3].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60
@@ -184,7 +184,7 @@ class standingsViewController: UIViewController
             labelFive.isHidden = false
             fifth.text = master.teamSort[4].name
             fifthGP.text = String(master.teamSort[4].games)
-            secondAS.text = String(Double(Int(master.teamSort[4].avg * 100.0 + 0.5)) / 100.0)
+            fifthAS.text = String(Double(Int(master.teamSort[4].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[4].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60
@@ -202,7 +202,7 @@ class standingsViewController: UIViewController
             labelSix.isHidden = false
             sixth.text = master.teamSort[5].name
             sixthGP.text = String(master.teamSort[5].games)
-            secondAS.text = String(Double(Int(master.teamSort[5].avg * 100.0 + 0.5)) / 100.0)
+            sixthAS.text = String(Double(Int(master.teamSort[5].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[5].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60
@@ -220,7 +220,7 @@ class standingsViewController: UIViewController
             labelSeven.isHidden = false
             seventh.text = master.teamSort[6].name
             seventhGP.text = String(master.teamSort[6].games)
-            secondAS.text = String(Double(Int(master.teamSort[6].avg * 100.0 + 0.5)) / 100.0)
+            seventhAS.text = String(Double(Int(master.teamSort[6].avg * 100.0 + 0.5)) / 100.0)
             let teamTime = Int(master.teamSort[6].avgTime + 0.5)
             let ones = teamTime % 60
             let tens = teamTime / 60

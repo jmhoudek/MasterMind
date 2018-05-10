@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func createTeam(_ sender: Any)
     {
-        if( master.teams.count < 7)
+        if(master.teams.count < 7)
         {
             if((newTeamText.text?.isEqual(""))! || (newTeamText.text?.isEqual(" "))! || (newTeamText.text?.isEqual("  "))! || (newTeamText.text?.isEqual("   "))!)
             {
