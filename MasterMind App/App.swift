@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import os.log
-var keepHere2 = ""
 
 
 class App: NSObject, Codable
@@ -17,7 +16,9 @@ class App: NSObject, Codable
     var teams = [Team]()
     var teamSort = [Team]()
     var hallOfFame = [Team]()
-
+    var timerOn = true
+    var currentPlayer = ""
+    var gameAmount = 40
     
     override init()
     {
@@ -32,7 +33,6 @@ class App: NSObject, Codable
     {
         teams.append(Team(tname: str))
         teamSort.append(Team(tname: str))
-        archive(fileName: keepHere2)
         
     }
     
@@ -40,7 +40,6 @@ class App: NSObject, Codable
     {
         var index = 0
         var index2 = 0
-        var index3 = 0
         for x in teams
         {
             if (str.isEqual(x.name))
@@ -61,16 +60,7 @@ class App: NSObject, Codable
             }
             index2 += 1
         }
-        for x in teamNames
-        {
-            if (str.isEqual(x))
-            {
-                teamNames.remove(at: index3)
-                break
-            }
-            index3 += 1
-        }
-        archive(fileName: keepHere2)
+        
     }
     
     func hofSort()
@@ -96,7 +86,6 @@ class App: NSObject, Codable
             }
         }
         hallOfFame = sortedArray
-        archive(fileName: keepHere2)
     }
     
     func avgSort()

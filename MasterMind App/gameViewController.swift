@@ -79,11 +79,11 @@ class gameViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        startGame()
+        newGame.newRandomNumber()
         startTimer()
         timerCount = 0
         tenCount = 0
-        teamPlaying.text = currentPlayer
+        teamPlaying.text = master.currentPlayer
         attempts = 0
         one.isEnabled = true
         two.isEnabled = true
@@ -99,7 +99,7 @@ class gameViewController: UIViewController
         enter.isEnabled = true
         singleOpenCount = 0
         counterLabel.text = "0:00"
-        if(timerOn)
+        if(master.timerOn)
         {
             counterLabel.isHidden = false
         }
@@ -433,7 +433,7 @@ class gameViewController: UIViewController
                 var index = 0
                 for x in master.teams
                 {
-                    if (currentPlayer.isEqual(x.name))
+                    if (master.currentPlayer.isEqual(x.name))
                     {
                         let totalTime = ((self.tens*60) + self.ones)
                         master.teams[index].update(newScore: Double(self.attempts), newTime: Double(totalTime))
@@ -468,14 +468,14 @@ class gameViewController: UIViewController
                 var index = 0
                 for x in master.teams
                 {
-                    if (currentPlayer.isEqual(x.name))
+                    if (master.currentPlayer.isEqual(x.name))
                     {
                         master.teams[index].update(newScore: 1000.0, newTime: 1000.0)
                         break
                     }
                     index += 1
                 }
-                master.discardTeam(str: currentPlayer)
+                master.discardTeam(str: master.currentPlayer)
                 self.performSegue(withIdentifier: "toHome", sender: nil)
                 alert.dismiss(animated: true, completion: nil)
             }))
@@ -510,11 +510,6 @@ class gameViewController: UIViewController
             
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    func startGame()
-    {
-        newGame.newRandomNumber()
     }
     
     func updateLabels()

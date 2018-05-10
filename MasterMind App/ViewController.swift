@@ -10,10 +10,6 @@ import UIKit
 
 var master = App()
 var newGame = Game()
-var teamNames = [String]()
-var currentPlayer = ""
-var gameAmount = 40
-var timerOn = true
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
 {
@@ -31,12 +27,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         discardPicker.dataSource = self
         startButton.isEnabled = false
         newTeamText.delegate = self
-        maxGamesText.text = String(gameAmount)
+        maxGamesText.text = String(master.gameAmount)
         self.selectTeam.selectRow(0, inComponent: 0, animated: false)
         self.discardPicker.selectRow(0, inComponent: 0, animated: false)
         gamesPlayedText.text = ""
         avgScoreText.text = ""
-        switchOn.setOn(timerOn, animated: false)
+        switchOn.setOn(master.timerOn, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -47,7 +43,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         discardPicker.dataSource = self
         startButton.isEnabled = false
         newTeamText.delegate = self
-        maxGamesText.text = String(gameAmount)
+        maxGamesText.text = String(master.gameAmount)
         self.selectTeam.selectRow(0, inComponent: 0, animated: false)
         self.discardPicker.selectRow(0, inComponent: 0, animated: false)
         gamesPlayedText.text = ""
@@ -63,13 +59,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func timerSwitch(_ sender: Any)
     {
-        if(timerOn)
+        if(master.timerOn)
         {
-            timerOn = false
+            master.timerOn = false
         }
         else
         {
-            timerOn = true
+            master.timerOn = true
         }
     }
     
@@ -95,7 +91,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         if (num != nil)
         {
-            gameAmount = Int(maxGamesText.text!)!
+            master.gameAmount = Int(maxGamesText.text!)!
             self.view.endEditing(true)
         }
         else
@@ -127,7 +123,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             {
                 let text = newTeamText.text!
                 master.addTeam(str: text)
-                teamNames.append(text)
             }
             newTeamText.text = ""
             selectTeam.delegate = self
@@ -163,7 +158,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func gameStart(_ sender: Any)
     {
-        if(Int(gamesPlayedText.text!)! < gameAmount)
+        if(Int(gamesPlayedText.text!)! < master.gameAmount)
         {
             self.performSegue(withIdentifier: "toGame", sender: nil)
         }
@@ -194,7 +189,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             else
             {
-                return teamNames[row - 1]
+                return master.teams[row - 1].name
             }
         }
         else
@@ -205,7 +200,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             else
             {
-                return teamNames[row - 1]
+                return master.teams[row - 1].name
             }
         }
     }
@@ -214,11 +209,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     {
         if ( pickerView == discardPicker )
         {
-            return teamNames.count + 1
+            return master.teams.count + 1
         }
         else
         {
-            return teamNames.count + 1
+            return master.teams.count + 1
         }
     }
     
@@ -228,7 +223,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         {
             if( row > 0 )
             {
-                toBeDiscarded = teamNames[row - 1]
+                toBeDiscarded = master.teams[row - 1].name
             }
         }
         else
@@ -236,25 +231,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if( row > 0 )
             {
                 startButton.isEnabled = true
-                currentPlayer = teamNames[row - 1]
-                var index = 0
-                for x in master.teams
-                {
-                    if (teamNames[row - 1].isEqual(x.name))
-                    {
-                        avgScoreText.text = String(master.teams[index].avg)
-                        gamesPlayedText.text = String(master.teams[index].games)
-                        break
-                    }
-                    index += 1
-                }
+                master.currentPlayer = master.teams[row - 1].name
+                avgScoreText.text = String(master.teams[row - 1].avg)
+                gamesPlayedText.text = String(master.teams[row - 1].games)
             }
             else
             {
                 startButton.isEnabled = false
                 avgScoreText.text = ""
                 gamesPlayedText.text = ""
-                currentPlayer = ""
+                master.currentPlayer = ""
             }
         }
     }
