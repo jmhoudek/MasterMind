@@ -15,7 +15,9 @@ class App: NSObject, Codable
     var teams = [Team]()
     var teamSort = [Team]()
     var hallOfFame = [Team]()
-
+    var timerOn = true
+    var currentPlayer = ""
+    var gameAmount = 40
     
     override init()
     {
