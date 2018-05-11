@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import os.log
+var keepHere = "yeet"
 
 class App: NSObject, Codable
 {
@@ -238,6 +239,8 @@ class App: NSObject, Codable
                 // *** Replace all the assignment statements BELOW to "restore" all properties of the object ***
                  teams = recoveredData.teams
                  hallOfFame = recoveredData.hallOfFame
+                 timerOn = recoveredData.timerOn
+                 gameAmount = recoveredData.gameAmount
                 // *** Replace all the assignment statements ABOVE to "restore" all properties of the object ***
             } catch {
                 os_log("Failed to recover data", log: OSLog.default, type: .error)
