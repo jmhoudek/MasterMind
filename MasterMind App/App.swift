@@ -37,7 +37,6 @@ class App: NSObject, Codable
     {
         var index = 0
         var index2 = 0
-        var index3 = 0
         for x in teams
         {
             if (str.isEqual(x.name))
@@ -57,15 +56,6 @@ class App: NSObject, Codable
                 
             }
             index2 += 1
-        }
-        for x in teamNames
-        {
-            if (str.isEqual(x))
-            {
-                teamNames.remove(at: index3)
-                break
-            }
-            index3 += 1
         }
     }
     
