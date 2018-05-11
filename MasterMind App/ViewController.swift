@@ -232,7 +232,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             {
                 startButton.isEnabled = true
                 master.currentPlayer = master.teams[row - 1].name
-                avgScoreText.text = String(master.teams[row - 1].avg)
+                avgScoreText.text = String(Double(Int(master.teamSort[row - 1].avg * 100.0 + 0.5)) / 100.0)
                 gamesPlayedText.text = String(master.teams[row - 1].games)
             }
             else
