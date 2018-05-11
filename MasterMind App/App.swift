@@ -9,8 +9,6 @@
 import UIKit
 import Foundation
 import os.log
-var keepHere2 = ""
-
 
 class App: NSObject, Codable
 {
@@ -32,7 +30,6 @@ class App: NSObject, Codable
     {
         teams.append(Team(tname: str))
         teamSort.append(Team(tname: str))
-        archive(fileName: keepHere2)
         
     }
     
@@ -70,7 +67,6 @@ class App: NSObject, Codable
             }
             index3 += 1
         }
-        archive(fileName: keepHere2)
     }
     
     func hofSort()
@@ -96,7 +92,6 @@ class App: NSObject, Codable
             }
         }
         hallOfFame = sortedArray
-        archive(fileName: keepHere2)
     }
     
     func avgSort()
@@ -250,7 +245,6 @@ class App: NSObject, Codable
                 os_log("Data successfully recovered from file.", log: OSLog.default, type: .debug)
                 // *** Replace all the assignment statements BELOW to "restore" all properties of the object ***
                  teams = recoveredData.teams
-                 teamSort = recoveredData.teamSort
                  hallOfFame = recoveredData.hallOfFame
                 // *** Replace all the assignment statements ABOVE to "restore" all properties of the object ***
             } catch {
