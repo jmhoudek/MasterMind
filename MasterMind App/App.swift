@@ -19,6 +19,7 @@ class App: NSObject, Codable
     var timerOn = true
     var currentPlayer = ""
     var gameAmount = 40
+    var didStart = false
     
     override init()
     {

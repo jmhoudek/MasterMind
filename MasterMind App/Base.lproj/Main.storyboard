@@ -1275,6 +1275,7 @@
                     <navigationItem key="navigationItem" id="er1-ko-gm9"/>
                     <connections>
                         <outlet property="avgScoreText" destination="2VF-pn-nfs" id="khc-S9-OTZ"/>
+                        <outlet property="discardButton" destination="YqY-9k-uwB" id="Ao4-ey-s5w"/>
                         <outlet property="discardPicker" destination="RTW-fc-qao" id="LPk-gj-1cv"/>
                         <outlet property="gamesPlayedText" destination="9j0-8M-xf2" id="qXy-C6-xDc"/>
                         <outlet property="maxGamesText" destination="OEA-Eg-Uvx" id="EwT-qj-cXh"/>
