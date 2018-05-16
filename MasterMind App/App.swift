@@ -19,6 +19,7 @@ class App: NSObject, Codable
     var timerOn = true
     var currentPlayer = ""
     var gameAmount = 40
+    var didStart = false
     
     override init()
     {
@@ -179,7 +180,7 @@ class App: NSObject, Codable
     func checkHallOfFame(team: Team)
     {
         var copy = hallOfFame
-        if(team.games > 20)
+        if(team.games >= 20)
         {
             let x = hallOfFame.count
             

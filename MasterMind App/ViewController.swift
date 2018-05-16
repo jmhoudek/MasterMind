@@ -29,6 +29,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         gamesPlayedText.text = ""
         avgScoreText.text = ""
         switchOn.setOn(master.timerOn, animated: false)
+        master.didStart = false
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -44,6 +45,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.discardPicker.selectRow(0, inComponent: 0, animated: false)
         gamesPlayedText.text = ""
         avgScoreText.text = ""
+        switchOn.setOn(master.timerOn, animated: false)
+        master.didStart = false
     }
     
     override func didReceiveMemoryWarning()
@@ -139,6 +142,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.view.endEditing(true)
     }
     
+    @IBOutlet weak var discardButton: UIButton!
     @IBAction func discardTeam(_ sender: Any)
     {
         master.discardTeam(str: toBeDiscarded)
@@ -221,14 +225,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             {
                 toBeDiscarded = master.teams[row - 1].name
             }
+            else
+            {
+                discardButton.isEnabled = false
+            }
         }
         else
         {
             if( row > 0 )
             {
                 startButton.isEnabled = true
-                master.currentPlayer = master.teams[row - 1].name
-                avgScoreText.text = String(master.teams[row - 1].avg)
+                if(!master.didStart)
+                {
+                    master.currentPlayer = master.teams[row - 1].name
+                }
+                avgScoreText.text = String(Double(Int(master.teams[row - 1].avg * 100.0 + 0.5)) / 100.0)
                 gamesPlayedText.text = String(master.teams[row - 1].games)
             }
             else
@@ -236,7 +247,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 startButton.isEnabled = false
                 avgScoreText.text = ""
                 gamesPlayedText.text = ""
-                master.currentPlayer = ""
             }
         }
     }

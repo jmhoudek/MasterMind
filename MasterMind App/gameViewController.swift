@@ -99,6 +99,8 @@ class gameViewController: UIViewController
         enter.isEnabled = true
         singleOpenCount = 0
         counterLabel.text = "0:00"
+        master.didStart = true
+        
         if(master.timerOn)
         {
             counterLabel.isHidden = false
