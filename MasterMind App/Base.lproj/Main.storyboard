@@ -648,9 +648,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-Js-nA8">
-                                <rect key="frame" x="51" y="477" width="903" height="111"/>
+                                <rect key="frame" x="51" y="477" width="939" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">5. If make 8 guesses and do not find the secret number. You can either discard the attempt, or delete that team from the device. </string>
+                                <string key="text">5. If you make 8 guesses and do not find the secret number. You can either discard the attempt, or delete that team from the device. </string>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
