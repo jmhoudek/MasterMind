@@ -30,6 +30,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         avgScoreText.text = ""
         switchOn.setOn(master.timerOn, animated: false)
         master.didStart = false
+        var index = 0
+        for x in master.teams
+        {
+            if (master.currentPlayer.isEqual(x.name))
+            {
+                self.selectTeam.selectRow(index + 1, inComponent: 0, animated: false)
+                gamesPlayedText.text = String(x.games)
+                avgScoreText.text = String(Double(Int(x.avg * 100.0 + 0.5)) / 100.0)
+                startButton.isEnabled = true
+                break
+            }
+            index += 1
+        }
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -47,6 +60,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         avgScoreText.text = ""
         switchOn.setOn(master.timerOn, animated: false)
         master.didStart = false
+        var index = 0
+        for x in master.teams
+        {
+            if (master.currentPlayer.isEqual(x.name))
+            {
+                self.selectTeam.selectRow(index + 1, inComponent: 0, animated: false)
+                gamesPlayedText.text = String(x.games)
+                avgScoreText.text = String(Double(Int(x.avg * 100.0 + 0.5)) / 100.0)
+                startButton.isEnabled = true
+                break
+            }
+            index += 1
+        }
     }
     
     override func didReceiveMemoryWarning()
@@ -106,7 +132,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func createTeam(_ sender: Any)
     {
-        if(master.teams.count < 7)
+        var sameName = false
+        for x in master.teams
+        {
+            if (x.name.isEqual(newTeamText.text))
+            {
+                sameName = true
+                break
+            }
+        }
+        if(sameName)
+        {
+            let alert = UIAlertController(title: "Stop!", message: "There is already a team with this name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler:{ (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        else if(master.teams.count < 7)
         {
             if((newTeamText.text?.isEqual(""))! || (newTeamText.text?.isEqual(" "))! || (newTeamText.text?.isEqual("  "))! || (newTeamText.text?.isEqual("   "))!)
             {
@@ -152,6 +197,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         discardPicker.dataSource = self
         self.selectTeam.selectRow(0, inComponent: 0, animated: true)
         self.discardPicker.selectRow(0, inComponent: 0, animated: true)
+        startButton.isEnabled = false
         avgScoreText.text = ""
         gamesPlayedText.text = ""
     }
